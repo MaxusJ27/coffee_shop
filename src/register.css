@@ -1,251 +1,284 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: #CC9544;
-  }
-  .signup {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #CC9544;
+}
+
+.signup {
   /* background-color: #CC9544; */
-    margin-right: auto;
-    padding: 4rem;
-    margin-left: auto;
-    overflow: hidden;
-    display: flex;
-    column-gap: 2.5rem;
-    align-items: center;
-    justify-content: center;
-    height: 720px;
-    /* height: 100%; */
-    position: relative;
-    backdrop-filter: blur(2rem);
-  }
-  
-  /* added shapes for glassmorphism effects */
-  .shape {
-    height: 200px;
-    width: 200px;
-    position: absolute;
-    border-radius: 50%;
-  }
-  
-  .shape.first {
-    background: linear-gradient(#1845ad,
-        #23a2f6);
-    right: 0;
-    top: 0;
-  }
-  
-  .shape.second {
-    background: linear-gradient(to right,
-        #ff512f,
-        #f09819);
-    left: 45%;
-    bottom: 0;
-  }
-  .shape.third {
-    background: linear-gradient(to right,
-        #603601,
-        #f09819);
-    left: 0%;
-    bottom: 0;
-  }
-  /* set width at 50%  */
-  .container__child {
-    width: 50%;
-    height: 100%;
-    color: #fff;
-    border-radius: 2rem;
-    backdrop-filter: blur(2rem);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-  }
-  /* adjust the content next to the sign up form  
+  margin-right: auto;
+  padding: 4rem;
+  margin-left: auto;
+  overflow: hidden;
+  display: flex;
+  column-gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  height: 720px;
+  /* height: 100%; */
+  position: relative;
+  backdrop-filter: blur(2rem);
+}
+
+/* added shapes for glassmorphism effects */
+.shape {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.shape.first {
+  background: linear-gradient(#1845ad,
+      #23a2f6);
+  right: 0;
+  top: 0;
+}
+
+.shape.second {
+  background: linear-gradient(to right,
+      #ff512f,
+      #f09819);
+  left: 45%;
+  bottom: 0;
+}
+
+.shape.third {
+  background: linear-gradient(to right,
+      #603601,
+      #f09819);
+  left: 0%;
+  bottom: 0;
+}
+
+/* set width at 50%  */
+.container__child {
+  width: 50%;
+  height: 100%;
+  color: #fff;
+  border-radius: 2rem;
+  backdrop-filter: blur(2rem);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+}
+
+/* adjust the content next to the sign up form  
     add animated gradient background
   */
-  .signup__content {
-    position: relative;
-    padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    /* background: linear-gradient(-45deg, #ee7752, #ed1769, #becbd0, black);
+.signup__content {
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* background: linear-gradient(-45deg, #ee7752, #ed1769, #becbd0, black);
     animation: gradient 8s ease infinite;
     background-size: 400% 400%; */
-  
+
+}
+
+/* animation for gradient background */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
   }
-  /* animation for gradient background */
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-  
-    50% {
-      background-position: 100% 50%;
-    }
-  
-    100% {
-      background-position: 0% 50%;
-    }
+
+  50% {
+    background-position: 100% 50%;
   }
-  
-  /* design for signup form 
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* design for signup form 
     add in backdrop filter for the glassmorphism effect
   */
-  .signup__form {
-    
-    height: 100%;
-    padding: 4rem;
-    backdrop-filter: blur(2rem);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-    z-index: 5;
-    border-radius: 2rem;
-    transition: all .3s ease;
-    overflow: none;
-  }
-  .signup__form h2 {
-    margin-bottom: 2rem;
-  }
-  
-  .signup__logo img {
-    width: 2rem;
-  }
-  
-  .signup__title {
-    display: flex;
-    position: absolute;
-    z-index: 100;
-    top: 2%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    column-gap: 0.5rem;
-  }
-  
-  .signup__text h1 {
-    letter-spacing: 0.05em;
-    font-size: 1.25em;
-    margin-top: 0.5em;
-  }
-  .signup__description {
-    position: absolute;
-    top: 60%;
+.signup__form {
 
-  }
-  .signup__description h2 {
-    /* max-width: 300px; */
-    margin-top: 0.5em;
-    line-height: 1.5;
-    font-size: 2em;
-    letter-spacing: 0.05em;
-    /* color: black; */
-  }
-  
-  
-  .signup__form h2 {
-    /* margin-top: 0.5rem; */
-    color: #fff;
-    text-align: center;
-  }
-  .signup__title__logo {
+  height: 100%;
+  padding: 4rem;
+  backdrop-filter: blur(2rem);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  z-index: 5;
+  border-radius: 2rem;
+  transition: all .3s ease;
+  overflow: none;
+}
+
+.signup__form h2 {
+  margin-bottom: 2rem;
+}
+
+.signup__logo img {
+  width: 2rem;
+}
+
+.signup__title {
+  display: flex;
+  position: absolute;
+  z-index: 100;
+  top: 2%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  column-gap: 0.5rem;
+}
+
+.signup__text h1 {
+  letter-spacing: 0.05em;
+  font-size: 1.25em;
+  margin-top: 0.5em;
+}
+
+.signup__description {
+  position: absolute;
+  top: 60%;
+
+}
+
+.signup__description h2 {
+  /* max-width: 300px; */
+  margin-top: 0.5em;
+  line-height: 1.5;
+  font-size: 2em;
+  letter-spacing: 0.05em;
+  /* color: black; */
+}
+
+
+.signup__form h2 {
+  /* margin-top: 0.5rem; */
+  color: #fff;
+  text-align: center;
+}
+
+.signup__title__logo {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 30%;
+  min-width: 480px;
+}
+
+.signup__title__logo h1 {
+  font-size: 6em;
+  letter-spacing: 0.15em;
+}
+
+.user-box {
+  position: relative;
+  margin-top: 1rem;
+}
+
+/* design for input in the box  */
+.user-box input {
+  width: 100%;
+  padding: 0.5rem 0;
+  font-size: 1em;
+  color: #fff;
+  margin-bottom: 4rem;
+  border: none;
+  border-bottom: 1.5px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+/* position the placeholder in the text */
+.user-box label {
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  padding: 1rem 0;
+  font-size: 1em;
+  color: #fff;
+  transition: .5s;
+  pointer-events: none;
+}
+
+.user-box input:hover~label {
+  color: #ee7752;
+}
+
+/* animate the input placeholder  */
+.user-box input:focus~label,
+.user-box input:valid~label {
+  top: -3rem;
+  left: 0;
+  color: #03e8f4f8;
+  font-size: 1em;
+}
+
+#chk {
+  display: none;
+}
+
+.login {
+  height: 380px;
+  transform: translateY(100px);
+  transition: .8s ease-in-out;
+  /* background: #eee; */
+  border-radius: 60% / 10%;
+}
+.form-title {
+	color: #fff;
+	font-size: 2em;
+	justify-content: center;
+	/* display: flex; */
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+/* .login input{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px; 
+} */
+#chk:checked~.login {
+  transform: translateY(-350px);
+}
+
+#chk:checked~.login label {
+  transform: scale(1);
+}
+
+#chk:checked~.register {
+  /* transform: scale(.6); */
+  transform: translateY(500px);
+}
+
+/* add responsiveness to the sign up form */
+@media screen and (max-width: 800px) {
+  .signup {
     display: flex;
-    align-items: center;
-    position: absolute;
+    flex-direction: column;
+    height: 840px;
+    padding: 1rem;
+    row-gap: 1rem;
+  }
+
+  .container__child {
+    width: 80%;
+  }
+
+  .shape.first {
     top: 30%;
-    min-width: 480px;
-  }
-  .signup__title__logo h1 {
-    font-size: 6em;
-    letter-spacing: 0.15em;
-  }
-  .user-box {
-    position: relative;
-  }
-  /* design for input in the box  */
-  .user-box input {
-    width: 100%;
-    padding: 0.5rem 0;
-    font-size: 1em;
-    color: #fff;
-    margin-bottom: 4rem;
-    border: none;
-    border-bottom: 1.5px solid #fff;
-    outline: none;
-    background: transparent;
-  }
-  /* position the placeholder in the text */
-  .user-box label {
-    position: absolute;
-    top: -1rem;
-    left: 0;
-    padding: 1rem 0;
-    font-size: 1em;
-    color: #fff;
-    transition: .5s;
-    pointer-events: none;
-  }
-  .user-box input:hover~label {
-    color: #ee7752;
-  }
-  /* animate the input placeholder  */
-  .user-box input:focus~label,
-  .user-box input:valid~label
-   {
-    top: -3rem;
-    left: 0;
-    color: #03e8f4f8;
-    font-size: 1em;
+    left: 20%;
   }
 
-  #chk {
-    display: none;
+  .signup__content {
+    font-size: 80%;
   }
-  .login {
-    height: 460px;
-    /* background: #eee; */
-    /* border-radius: 60% / 10%; */
-    transform: translateY(100px);
-    transition: .8s ease-in-out;
-  }
-  .login label{
-    color: #573b8a;
-    transform: scale(.6);
-  }
-  
-  #chk:checked ~ .login{
-    transform: translateY(-350px);
-  }
-  #chk:checked ~ .login label{
-    transform: scale(1);	
-  }
-  #chk:checked ~ .register label{
-    transform: scale(.6);
-  }
-  #chk:checked ~ .register {
-    transform: translateY(500px);
-  }
-  /* add responsiveness to the sign up form */
-  @media screen and (max-width: 800px) {
-    .signup {
-      display: flex;
-      flex-direction: column;
-      height: 840px;
-      padding: 1rem;
-      row-gap: 1rem;
-    }
-  
-    .container__child {
-      width: 80%;
-    }
-  
-    .shape.first {
-      top: 30%;
-      left: 20%;
-    }
-  
-    .signup__content {
-      font-size: 80%;
-    }
-  }
-  
+}
