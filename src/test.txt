@@ -1,0 +1,46 @@
+<div id='new_products' class='carousel slide' data-ride='carousel'>
+        <div class='carousel-inner'>
+            <?php $i = 0; foreach ($recently_added_products as $product): ?>
+            <?php if ($i == 0) {
+                    $set_ = 'active';
+                } else {
+                    $set_ = '';
+                } ?>
+            <div class='carousel-item <?php echo $set_; ?>'>
+                <div class="item">
+                    <div class="item-left">
+                        <p>
+                            Geoloco updates you with the check out the latest undiscovered places in
+                            Malaysia
+                            for convenience. It also informs you about the situations that may affect
+                            your travels, such as weather forecast, haze, etc.
+                        </p>
+                    </div>
+                    <div class="item-right">
+                        <img src="<?= $product['img'] ?>" alt="third slide img">
+                    </div>
+                </div>
+                <!-- <img src='<?= $product['img'] ?>' class='d-block w-100'> -->
+            </div>
+            <?php $i++; endforeach ?>
+        </div>
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#new_products" data-bs-slide-to="0" class="active img-thumbnail"
+                id="carousel-button-1">
+            </button>
+            <button type="button" data-bs-target="#new_products" data-bs-slide-to="1" class="img-thumbnail"
+                id="carousel-button-2"></button>
+            <button type="button" data-bs-target="#new_products" data-bs-slide-to="2" class="img-thumbnail"
+                id="carousel-button-3"></button>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#new_products" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#new_products" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
