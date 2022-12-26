@@ -1,4 +1,5 @@
 <?php
+session_start();
 function pdo_connect_mysql()
 {
     $servername = "localhost";
@@ -15,11 +16,11 @@ function pdo_connect_mysql()
         echo "Connection failed: " . $e->getMessage();
     }
 
-
 }
 // Template header, feel free to customize this
 function template_header($title)
 {
+    $num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;   
     echo <<<EOT
     <!DOCTYPE html>
     <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -48,16 +49,18 @@ function template_header($title)
         <header id="navbar">
         <ul class="navlist">
         
+        <li><a href="register.php"><i class="fas fa-sign-out-alt fa-rotate-180"></i></a></li>
         <li><a href="index.php">About</a></li>
+        
         <li><a href="#guide">FAQs</a></li>
         <li><a href="products.php">Products</a></li>
-            <a href="#" class="logo">
-                <img src="../assets/logo-circle-2.png" width="50" alt="logo">
-            </a>
-                <li><a href="#reviews">Review</a></li>
-                <li><a href="#company">Company</a></li>
-                <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i></a></li>
-            </ul>
+        <a href="#" class="logo">
+        <img src="../assets/logo-circle-2.png" width="50" alt="logo">
+        </a>
+        <li><a href="#reviews">Review</a></li>
+        <li><a href="#company">Company</a></li>
+        <li><a href="cart.php"> <i class="fas fa-shopping-cart"><span>$num_items_in_cart</span></i><a/></li>
+        </ul>
             <div class="bx bx-menu" id="menu-icon"></div>
         </header>
     <main>

@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -21,19 +23,21 @@
         <div class="shape third"></div>
         <div class="container__child signup__content">
             <div class="signup__title">
-                <h2>Covfefe</h2>
                 <div class="signup__logo">
                     <img src="../assets/logo-circle.png" width="25" alt="signup-logo">
                 </div>
+                <h2>Covfee</h2>
 
             </div>
             <div class="signup__title__logo">
-                <h1>C</h1>
-                <img src="../assets/logo-circle-2.png" width="120">
-                <h1>V</h1>
-                <h1>F</h1>
-                <h1>E</h1>
-                <h1>E</h1>
+                <div class="signup__title">
+                    <h1>C</h1>
+                    <img src="../assets/logo-circle-2.png" width="120">
+                    <h1>V</h1>
+                    <h1>F</h1>
+                    <h1>E</h1>
+                    <h1>E</h1>
+                </div>
             </div>
             <div class="signup__description">
                 <h2>A Celebration of Flavours</h2>

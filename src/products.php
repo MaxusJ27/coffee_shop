@@ -37,7 +37,7 @@ $old_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <span class="price">
                     &dollar;<?= $product['price'] ?>
                     <?php if ($product['rrp'] > 0): ?>
-                    <span class="rrp">&dollar;<?= $product['rrp'] ?></span>
+                    <!-- <span class="rrp">&dollar;<?= $product['rrp'] ?></span> -->
                     <?php endif; ?>
                 </span>
             </a>
