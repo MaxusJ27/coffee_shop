@@ -57,7 +57,7 @@ function template_header($title)
         <a href="#" class="logo">
         <img src="../assets/logo-circle-2.png" width="50" alt="logo">
         </a>
-        <li><a href="#reviews">Review</a></li>
+        <li><a href="locations.php">Locations</a></li>
         <li><a href="#company">Company</a></li>
         <li><a href="cart.php"> <i class="fas fa-shopping-cart"><span>$num_items_in_cart</span></i><a/></li>
         </ul>

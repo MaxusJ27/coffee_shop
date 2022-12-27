@@ -1,4 +1,5 @@
 <?php
+include 'functions.php';
 
 /**
  * Yelp Fusion API code sample.
@@ -22,6 +23,7 @@
 class Locations {
     public $name;
     public $address;
+    public $url;
     public $imgUrl;
     public $rating;
     public $phoneNum;
@@ -37,11 +39,11 @@ assert($API_KEY, "Please supply your API key.");
 // API constants, you shouldn't have to change these.
 $API_HOST = "https://api.yelp.com";
 $SEARCH_PATH = "/v3/businesses/search";
-$BUSINESS_PATH = "/v3/businesses/";  // Business ID will come after slash.
+$BUSINESS_PATH = "/v3/businesses/";  
 
 // Defaults for our simple example.
 $DEFAULT_TERM = "cafe";
-$DEFAULT_LOCATION = "Kuala Lumpur";
+$DEFAULT_LOCATION = "Selangor";
 $SEARCH_LIMIT = 8;
 
 
@@ -134,9 +136,9 @@ function query_api($term, $location) {
     // $all_response = json_encode($response->businesses, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     $responses = json_decode(search($term, $location));
     $locations = array();
-    // $business_id = $responses->businesses[1]->id;
-    // $response = get_business($business_id);
-    // echo $response;
+    $business_id = $responses->businesses[1]->id;
+    $response = get_business($business_id);
+    echo $response;
     // $locations_data = json_encode(json_decode($response), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     // echo json_decode($response)->location->address1;
     // echo $locations_data;
@@ -150,17 +152,17 @@ function query_api($term, $location) {
         $locations[$i]->name = $location_data->name;
         $locations[$i]->address = $location_data->location->address1;
         $locations[$i]->zipCode = $location_data->location->zip_code;
+        $locations[$i]->url = $location_data->location->url;
         $locations[$i]->city = $location_data->location->city;
         $locations[$i]->imgUrl = $location_data->image_url;
         $locations[$i]->phoneNum = $location_data->phone;
         $locations[$i]->rating = $location_data->rating;
     
     }
-    // print_r($locations);
     foreach ($locations as $place) {
         echo 'Name:' . $place->name . ' Address:' . $place->location . "\n";
       }
-    
+    return $locations;
 
 }
 
@@ -177,10 +179,30 @@ $options = getopt("", $longopts);
 $term = $options['term'] ?: $GLOBALS['DEFAULT_TERM'];
 $location = $options['location'] ?: $GLOBALS['DEFAULT_LOCATION'];
 
-query_api($term, $location);
-// print($locations_data[0]);
-// foreach ($locations_data as $location) {
-//     print $location;
-// }
+$locations = query_api($term, $location);
+
 
 ?>
+
+<?= template_header('Locations') ?>
+
+<div class="location content-wrapper">
+    <div class="location-main">
+
+    </div>
+
+    <div class="location-wrapper">
+        <h1>Locations</h1>
+        <div class="location-list">
+            <?php foreach ($locations as $location): ?>
+            <a href="<?= $location->url ?>" class="product">
+                <img src="<?= $location->imgUrl ?>" width="200" height="200" alt="<?= $product['name'] ?>">
+                <span class="city"><?= $location->city ?></span>
+                <span class="name"><?= $location->name ?></span>
+            </a>
+            <?php endforeach; ?>
+        </div>
+
+    </div>
+</div>
+

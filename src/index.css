@@ -4,6 +4,7 @@
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   color: #333D47;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
