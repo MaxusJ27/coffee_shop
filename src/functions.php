@@ -51,8 +51,6 @@ function template_header($title)
         
         <li><a href="register.php"><i class="fas fa-sign-out-alt fa-rotate-180"></i></a></li>
         <li><a href="index.php">About</a></li>
-        
-        <li><a href="#guide">FAQs</a></li>
         <li><a href="products.php">Products</a></li>
         <a href="#" class="logo">
         <img src="../assets/logo-circle-2.png" width="50" alt="logo">

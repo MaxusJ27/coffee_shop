@@ -152,7 +152,7 @@ function query_api($term, $location) {
         $locations[$i]->name = $location_data->name;
         $locations[$i]->address = $location_data->location->address1;
         $locations[$i]->zipCode = $location_data->location->zip_code;
-        $locations[$i]->url = $location_data->location->url;
+        $locations[$i]->url = $location_data->url;
         $locations[$i]->city = $location_data->location->city;
         $locations[$i]->imgUrl = $location_data->image_url;
         $locations[$i]->phoneNum = $location_data->phone;
