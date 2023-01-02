@@ -1,3 +1,5 @@
+document.getElementById("Recent").style.display = "block";
+
 function openLink(evt, Recommendations) {
     // Declare all variables
     var i, tabcontent, tablinks;

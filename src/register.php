@@ -13,9 +13,7 @@
     <link rel="stylesheet" href="register.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
-        $('.button').click(function () {
-            $('.container__child').toggleClass('register login'); //Adds 'a', removes 'b' and vice versa
-        });
+
     </script>
 </head>
 
@@ -111,40 +109,28 @@
                             <!-- <label>Username</label> -->
                         </div>
                         <div class="input-field">
-                            <div class="password">
-                                <input type="password" name="password" id="password" placeholder="Password" required>
-                                <!-- <label>Password</label> -->
-                            </div>
+                            <input type="password" name="password" id="password" placeholder="Password" required>
+                            <!-- <label>Password</label> -->
                         </div>
                         <!-- <button class="clkbtn">Login</button> -->
-                        <input type="submit" value="Login">
+                        <input type="submit" id="register-button" value="Login">
                     </form>
                 </div>
 
                 <!-- signup form -->
                 <div class="signup-box">
-                    <div class="input-field">
-                        <input type="text" name="username" id="username" required>
-                        <!-- <label>Username</label> -->
-                    </div>
-                    <div class="input-field">
-                        <input type="text" name="email" id="email" required>
-                        <!-- <label>Email</label> -->
-                    </div>
-                    <div class="input-field">
-                        <input type="password" name="password" id="password" required>
-                        <!-- <label>Password</label> -->
-                    </div>
-                    <div class="input-field">
-                        <input type="password" name="password" id="password" required>
-                        <!-- <label>Confirm Password</label> -->
-                    </div>
-                    <input type="submit" value="Login">
-                    <!-- <input type="text" class="name ele" placeholder="Enter your name">
-                    <input type="email" class="email ele" placeholder="youremail@email.com">
-                    <input type="password" class="password ele" placeholder="password">
-                    <input type="password" class="password ele" placeholder="Confirm password">
-                    <button class="clkbtn">Signup</button> -->
+                    <form id="Register" action="insert_account.php" method="post">
+                        <input type="hidden" name="new" value="1" />
+                        <div class="input-field">
+                            <input type="text" name="username" id="username" placeholder="Username" required>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="email" id="email" placeholder="E-Mail" required>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" name="password" id="password" placeholder="Password" required>
+                        </div>
+                            <input type="submit" id="register-button" value="Register">
                 </div>
                 <!-- </div> -->
             </div>

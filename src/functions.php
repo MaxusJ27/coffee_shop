@@ -41,6 +41,7 @@ function template_header($title)
         <link rel="stylesheet" href="https://unpkg.com/neomorphism?v=<?php echo time(); ?>" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="products.css">
     </head>
     
     <body class="loggedIn">
