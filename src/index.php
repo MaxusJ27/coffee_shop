@@ -20,9 +20,6 @@ session_start();
                 <img src="../assets/coffee-3d-removebg-preview.png" alt="logo-image">
             </div>
         </div>
-        <!-- <div id="welcome"> -->
-        <!-- </div> -->
-        <!-- <img src="../assets/logo-circle-2.png"> -->
     </div>
 </div>
 <div class="info-cards" id="guide">
@@ -82,7 +79,7 @@ session_start();
                         <span class="stars">
                             <h1>Want To Know More?</h1>
                             <p id="two">
-                                Read up more about Covfee by clicking on this <button onclick="location.href='about.php'" id="one">about</button> button.
+                                Read up more about Covfee by clicking on this <button onclick="location.href='explore.php'" id="one">explore</button> button.
                             </p>
                         </span>
                     </div>

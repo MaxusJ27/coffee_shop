@@ -20,7 +20,8 @@ include 'functions.php';
 // You can find it on
 // https://www.yelp.com/developers/v3/manage_app
 
-class Locations {
+class Locations
+{
     public $name;
     public $address;
     public $url;
@@ -39,12 +40,12 @@ assert($API_KEY, "Please supply your API key.");
 // API constants, you shouldn't have to change these.
 $API_HOST = "https://api.yelp.com";
 $SEARCH_PATH = "/v3/businesses/search";
-$BUSINESS_PATH = "/v3/businesses/";  
+$BUSINESS_PATH = "/v3/businesses/";
 
 // Defaults for our simple example.
 $DEFAULT_TERM = "cafe";
 $DEFAULT_LOCATION = "Selangor";
-$SEARCH_LIMIT = 8;
+$SEARCH_LIMIT = 3;
 
 
 /**
@@ -55,7 +56,8 @@ $SEARCH_LIMIT = 8;
  * @param    $url_params    Array of query-string parameters.
  * @return   The JSON response from the request
  */
-function request($host, $path, $url_params = array()) {
+function request($host, $path, $url_params = array())
+{
     // Send Yelp API Call
     try {
         $curl = curl_init();
@@ -63,19 +65,24 @@ function request($host, $path, $url_params = array()) {
             throw new Exception('Failed to initialize');
 
         $url = $host . $path . "?" . http_build_query($url_params);
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true,  // Capture response.
-            CURLOPT_ENCODING => "",  // Accept gzip/deflate/whatever.
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => array(
-                "authorization: Bearer " . $GLOBALS['API_KEY'],
-                "cache-control: no-cache",
-            ),
-        ));
+        curl_setopt_array(
+            $curl,
+            array(
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                // Capture response.
+                CURLOPT_ENCODING => "",
+                // Accept gzip/deflate/whatever.
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                    "authorization: Bearer " . $GLOBALS['API_KEY'],
+                    "cache-control: no-cache",
+                ),
+            )
+        );
 
         $response = curl_exec($curl);
 
@@ -86,11 +93,14 @@ function request($host, $path, $url_params = array()) {
             throw new Exception($response, $http_status);
 
         curl_close($curl);
-    } catch(Exception $e) {
-        trigger_error(sprintf(
-            'Curl failed with error #%d: %s',
-            $e->getCode(), $e->getMessage()),
-            E_USER_ERROR);
+    } catch (Exception $e) {
+        trigger_error(
+            sprintf(
+                'Curl failed with error #%d: %s',
+                $e->getCode(), $e->getMessage()
+            ),
+            E_USER_ERROR
+        );
     }
 
     return $response;
@@ -103,7 +113,8 @@ function request($host, $path, $url_params = array()) {
  * @param    $location    The search location passed to the API
  * @return   The JSON response from the request
  */
-function search($term, $location) {
+function search($term, $location)
+{
     $url_params = array();
 
     $url_params['term'] = $term;
@@ -119,7 +130,8 @@ function search($term, $location) {
  * @param    $business_id    The ID of the business to query
  * @return   The JSON response from the request
  */
-function get_business($business_id) {
+function get_business($business_id)
+{
     $business_path = $GLOBALS['BUSINESS_PATH'] . urlencode($business_id);
 
     return request($GLOBALS['API_HOST'], $business_path);
@@ -131,19 +143,21 @@ function get_business($business_id) {
  * @param    $term        The search term to query
  * @param    $location    The location of the business to query
  */
-function query_api($term, $location) {
+function query_api($term, $location, $limit)
+{
     // $response = json_decode(search($term, $location));
     // $all_response = json_encode($response->businesses, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+
     $responses = json_decode(search($term, $location));
     $locations = array();
     $business_id = $responses->businesses[1]->id;
     $response = get_business($business_id);
-    echo $response;
+    // echo $response;
     // $locations_data = json_encode(json_decode($response), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     // echo json_decode($response)->location->address1;
     // echo $locations_data;
     // echo $locations_data;
-    for ($i = 0; $i < 8; $i++) {
+    for ($i = 0; $i < $limit; $i++) {
         $business_id = $responses->businesses[$i]->id;
         $response = get_business($business_id);
         $location_data = json_decode($response);
@@ -157,11 +171,11 @@ function query_api($term, $location) {
         $locations[$i]->imgUrl = $location_data->image_url;
         $locations[$i]->phoneNum = $location_data->phone;
         $locations[$i]->rating = $location_data->rating;
-    
+
     }
-    foreach ($locations as $place) {
-        echo 'Name:' . $place->name . ' Address:' . $place->location . "\n";
-      }
+    // foreach ($locations as $place) {
+    //     echo 'Name:' . $place->name . ' Address:' . $place->location . "\n";
+    // }
     return $locations;
 
 }
@@ -169,7 +183,7 @@ function query_api($term, $location) {
 /**
  * User input is handled here
  */
-$longopts  = array(
+$longopts = array(
     "term::",
     "location::",
 );
@@ -179,30 +193,55 @@ $options = getopt("", $longopts);
 $term = $options['term'] ?: $GLOBALS['DEFAULT_TERM'];
 $location = $options['location'] ?: $GLOBALS['DEFAULT_LOCATION'];
 
-$locations = query_api($term, $location);
+$locations = query_api($term, $location, $SEARCH_LIMIT);
 
 
 ?>
 
 <?= template_header('Locations') ?>
 
-<div class="location content-wrapper">
-    <div class="location-main">
-
-    </div>
-
-    <div class="location-wrapper">
-        <h1>Locations</h1>
-        <div class="location-list">
-            <?php foreach ($locations as $location): ?>
-            <a href="<?= $location->url ?>" class="product">
-                <img src="<?= $location->imgUrl ?>" width="200" height="200" alt="<?= $product['name'] ?>">
-                <span class="city"><?= $location->city ?></span>
-                <span class="name"><?= $location->name ?></span>
-            </a>
-            <?php endforeach; ?>
+<div class="location">
+    <div class="locations-main">
+        <div class="location-description">
+            <h2>Locations.</h2>
+            <p>Tired of looking at a screen? Visit a cafe near you
+                to find other coffee lovers!
+            </p>
         </div>
-
+        <video autoplay muted loop id="company-video">
+            <source src="../assets/locations.mp4" type="video/mp4">
+        </video>
     </div>
-</div>
 
+    <div class="places">
+        <h1>Places</h1>
+        <div class="info-cards location-list">
+            <div class="row">
+                <?php foreach ($locations as $location): ?>
+                    <div class="column location-col">
+                        <div class="card place" onclick="window.location='<?= $location->url ?>'">
+                            <div class="face face1 loc-card">
+                                <div class="place-img">
+                                    <img src="<?= $location->imgUrl ?>" width="200" height="200"
+                                        alt="<?= $product['name'] ?>">
+                                </div>
+                                <!-- <a href="<?= $location->url ?>">
+                                        </a> -->
+                                <div class="place-description">
+                                    <span class="city">
+                                        <?= $location->city ?>
+                                    </span>
+                                    <br>
+                                    <span class="name">
+                                        <?= $location->name ?>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+</div>

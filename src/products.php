@@ -26,7 +26,7 @@ $old_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <source src="../assets/Coffee-Products.mp4" type="video/mp4">
         </video>
     </div>
-    <div class="products-list">
+    <div class="products-lists">
         <div class="tab">
             <button class="tablinks" onclick="openLink(event, 'Recent')">Recently Added</button>
             <button class="tablinks" onclick="openLink(event, 'Relax')">Relaxing</button>
@@ -34,28 +34,28 @@ $old_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div id="Recent" class="tabcontent">
             <h2>Want something new? Look at our latest lists of products!</h2>
-            <div class="info-cards products-list">
+            <div class="info-cards products-cards">
                 <div class="row">
                     <?php foreach ($recently_added_products as $product): ?>
                         <div class="column product-col">
-                            <div class="card individual-product" onclick="window.location='product.php?id=<?= $product['id'] ?>'">
+                            <div class="card individual-product"
+                                onclick="window.location='product.php?id=<?= $product['id'] ?>'">
                                 <div class="face face1">
                                     <!-- <a href="product.php?id=<?= $product['id'] ?>"> -->
-                                    <div class="product">
-                                        <div class="product-description">
+                                    <div class="prod">
+                                        <!-- <div class="product-description"> -->
                                             <span class="product-name">
                                                 <?= $product['name'] ?>
                                             </span>
+                                            <!-- </div> -->
                                             <div class="product-img">
-                                                <img src="<?= $product['img'] ?>" width="200" height="200"
-                                                    alt="<?= $product['name'] ?>">
+                                                <img src="<?= $product['img'] ?>" alt="<?= $product['name'] ?>">
                                             </div>
                                             <span class="product-price">
                                                 &dollar;<?= $product['price'] ?>
                                                 <?php if ($product['rrp'] > 0): ?>
                                                     <?php endif; ?>
                                             </span>
-                                        </div>
                                     </div>
                                     <!-- </a> -->
                                 </div>

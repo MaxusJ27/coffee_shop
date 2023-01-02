@@ -42,6 +42,8 @@ function template_header($title)
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="products.css">
+        <link rel="stylesheet" href="product.css">
+        <link rel="stylesheet" href="location.css">
     </head>
     
     <body class="loggedIn">
@@ -57,7 +59,7 @@ function template_header($title)
         <img src="../assets/logo-circle-2.png" width="50" alt="logo">
         </a>
         <li><a href="locations.php">Locations</a></li>
-        <li><a href="#company">Company</a></li>
+        <li><a href="explore.php">Explore</a></li>
         <li><a href="cart.php"> <i class="fas fa-shopping-cart"><span>$num_items_in_cart</span></i><a/></li>
         </ul>
             <div class="bx bx-menu" id="menu-icon"></div>
@@ -78,6 +80,7 @@ function template_footer()
         </footer>
         <!-- connecting to Bootstrap cdn -->
     <script src="tab.js"></script>
+    <script src="product.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>

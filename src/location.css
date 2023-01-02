@@ -1,0 +1,61 @@
+
+.locations-main {
+    display: flex;
+    /* display: inline-block; */
+    min-width: 240px;
+    height: 720px;
+    position: relative;
+}
+
+.location-description {
+    padding: 8% 6%;
+    display: inline-block;
+    position: absolute;
+    width: 25%;
+}
+.location-description h2 {
+    line-height: 1.5;
+    font-size: 3em;
+}
+
+.location-description h2,
+p {
+    color: rgb(230, 217, 226);
+    font-weight: 600;
+}
+
+.places {
+    padding: 2% 10%;
+}
+
+.location-list {
+    background-color: transparent;
+}
+.place {
+    height: 600px;
+    background-color: transparent;
+    box-shadow: none;
+}
+.place-img {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+.place-img img {
+    width: 400px;
+    height: 400px;
+    margin: 2rem;
+}
+.column .location-col {
+    background: transparent;
+}
+.loc-card {
+    display: inline-block;
+    background: transparent;
+    border: none;
+}
+.place-description {
+    display: inline-block;
+    /* width: 100px; */
+}
