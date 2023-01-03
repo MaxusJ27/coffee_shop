@@ -95,7 +95,7 @@ if ($products_in_cart) {
         <h3>Shopping Cart</h3>
         <button class="search" id="neu-button">
             <i class="fas fa-search"></i>
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search product">
+            <input type="text" id="myInput" onkeyup="searchProduct()" placeholder="Search product">
 
         </button>
     </div>

@@ -1,0 +1,285 @@
+/*
+  Styling for Bootstrap Carousel
+*/
+.info-carousel {
+    background-color: #B8C6DB;
+    /* padding: 10% 5%; */
+    height: 540px;
+    display: flexbox;
+  }
+  
+  /* absolute positioned title so that it does not change 
+  every slide transition */
+  .animated-about-title {
+    font-family: Roboto, Arial, sans-serif;
+    display: block;
+    font-size: 3.5em;
+    left: 12rem;
+    margin-top: 5vmin;
+    z-index: 9;
+    position: absolute;
+    height: 20vmin;
+    -webkit-background-clip: text;
+    color: transparent;
+    overflow: hidden;
+  }
+  
+  .text-top {
+    background-image: url("../assets/icon/durian_cropped.png");
+    -webkit-background-clip: text;
+    color: transparent;
+    overflow: hidden;
+  
+  }
+  
+  .carousel-item {
+    transition: transform 1.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .item {
+    background: linear-gradient(to right, #F5F7FA 0%, #B8C6DB 100%);
+    display: flex;
+    height: 40rem;
+  }
+  
+  .item-left {
+    padding: 1.5rem;
+    flex: 0.5;
+    letter-spacing: 0.05em;
+    font-size: 1.2em;
+    margin-top: 12rem;
+    margin-left: 5rem;
+  }
+  
+  .item-right {
+    flex: 1;
+  }
+  
+  .item-right img {
+    width: 100%;
+    height: 40rem;
+  }
+  
+  /* 
+      Design for Why Geoloco on the Carousel
+      The Geoloco icon on each Bootstrap Carousel
+      has absolute position to prevent it from changing every
+      slide transition
+  */
+  .logo-text {
+    z-index: 9;
+    position: absolute;
+    display: inline-block;
+    margin-top: 5rem;
+    left: 5rem;
+    padding: 1.5rem;
+    background-image: url("../assets/icon/durian_cropped.png");
+    -webkit-background-clip: text;
+    color: transparent;
+    overflow: hidden;
+  }
+  
+  .logo-text h1 {
+    float: right;
+    font-size: 3.5em;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  
+  }
+  
+  .logo-text img {
+    margin-top: 3vmin;
+    height: 8vmin;
+  }
+  
+  
+  .carousel-fade .active.carousel-item-start,
+  .carousel-fade .active.carousel-item-end {
+    transition: opacity 0s 1.3s;
+  }
+  
+  
+  .img-thumbnail {
+    transition: 0.5s ease-in-out;
+  }
+  
+  
+  .carousel-indicators {
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Design for Bootstrap Carousel Buttons */
+  #carousel-button-1 {
+    transition: 1s ease-in;
+    transform: scale(1.0);
+    background: url("../assets/carousel/klcc-cropped.png");
+    object-fit: cover;
+  
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 25px;
+    margin-left: 15px;
+  }
+  
+  #carousel-button-1:hover {
+    transform: scale(1.1);
+  }
+  
+  #carousel-button-2 {
+    transition: 1s ease-in;
+    transform: scale(1.0);
+    background: url("../assets/carousel/langkawi-cropped.png");
+    object-fit: cover;
+  
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 25px;
+    margin-left: 15px;
+  }
+  
+  #carousel-button-2:hover {
+    transform: scale(1.1);
+  }
+  
+  #carousel-button-3 {
+    transition: 1s ease-in;
+    transform: scale(1.0);
+    background: url("../assets/carousel/cropped-masjid-kristal-2.png");
+    object-fit: cover;
+  
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 25px;
+    margin-left: 15px;
+  }
+  
+  #carousel-button-3:hover {
+    transform: scale(1.1);
+  }
+  
+  #carousel-button-3:active {
+    transform: scale(1.2);
+  }
+  
+  /* 
+    Design for responsiveness in
+    Bootstrap Carousel, adjust word and image size
+  */
+  @media screen and (max-width: 1100px) {
+    .animated-about-title {
+      transition: .5s;
+      margin-top: 3.5rem;
+      left: 11rem;
+      font-size: 2.5em;
+    }
+  
+    .logo-text h1 {
+      font-size: 2.5em;
+      transition: .5s;
+    }
+  
+    .logo-text img {
+      height: 5vmin;
+    }
+  }
+  
+  @media screen and (max-width: 900px) {
+    .animated-about-title {
+      left: 8rem;
+      font-size: 1.5em;
+      margin-top: 12vmin;
+    }
+  
+    .item {
+      height: 30rem;
+    }
+  
+    .item-right {
+      flex: 1;
+    }
+  
+    .item-right img {
+      width: 100%;
+      height: 100%;
+    }
+  
+    .logo-text {
+      left: 2rem;
+    }
+  
+    .logo-text h1 {
+      font-size: 1.5em;
+      margin-top: 2.5rem;
+    }
+  
+    .text-top {
+      margin-top: .75rem;
+    }
+  
+    .logo-text img {
+      height: 6vmin;
+    }
+  
+    .item-left {
+      padding: 1em;
+      flex: 0.5;
+      font-size: 1em;
+      margin-top: 25vmin;
+      margin-left: 2rem;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    #carousel-button-1 {
+      width: 3rem;
+      height: 3rem;
+    }
+  
+    #carousel-button-2 {
+      width: 3rem;
+      height: 3rem;
+    }
+  
+    #carousel-button-3 {
+      width: 3rem;
+      height: 3rem;
+    }
+  
+    .animated-about-title {
+      left: 5.5rem;
+      font-size: 1.5em;
+      margin-top: 16vmin;
+    }
+  
+    .logo-text {
+      left: 0.5rem;
+    }
+  
+    .logo-text h1 {
+      font-size: 1.5em;
+      margin-top: 2rem;
+    }
+  
+    .logo-text img {
+      height: 5vmin;
+    }
+  
+    .item-left {
+      transform: scale(0.8);
+    }
+    .item-left p {
+      font-size: 0.8em;
+    }
+    
+  }
