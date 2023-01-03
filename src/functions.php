@@ -44,6 +44,7 @@ function template_header($title)
         <link rel="stylesheet" href="products.css">
         <link rel="stylesheet" href="product.css">
         <link rel="stylesheet" href="location.css">
+        <link rel="stylesheet" href="cart.css">
     </head>
     
     <body class="loggedIn">

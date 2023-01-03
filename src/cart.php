@@ -6,8 +6,8 @@ session_start();
 // If the user clicked the add to cart button on the product page we can check for the form data
 if (isset($_POST['product_id'], $_POST['quantity']) && is_numeric($_POST['product_id']) && is_numeric($_POST['quantity'])) {
     // Set the post variables so we easily identify them, also make sure they are integer
-    $product_id = (int)$_POST['product_id'];
-    $quantity = (int)$_POST['quantity'];
+    $product_id = (int) $_POST['product_id'];
+    $quantity = (int) $_POST['quantity'];
     // Prepare the SQL statement, we basically are checking if the product exists in our databaser
     $stmt = $pdo->prepare('SELECT * FROM products WHERE id = ?');
     $stmt->execute([$_POST['product_id']]);
@@ -46,7 +46,7 @@ if (isset($_POST['update']) && isset($_SESSION['cart'])) {
     foreach ($_POST as $k => $v) {
         if (strpos($k, 'quantity') !== false && is_numeric($v)) {
             $id = str_replace('quantity-', '', $k);
-            $quantity = (int)$v;
+            $quantity = (int) $v;
             // Always do checks and validation
             if (is_numeric($id) && isset($_SESSION['cart'][$id]) && $quantity > 0) {
                 // Update new quantity
@@ -85,51 +85,63 @@ if ($products_in_cart) {
 }
 ?>
 
-<?=template_header('Cart')?>
+<?= template_header('Cart') ?>
 
-<div class="cart content-wrapper">
-    <h1>Shopping Cart</h1>
-    <form action="cart.php" method="post">
-        <table>
-            <thead>
-                <tr>
-                    <td colspan="2">Product</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Total</td>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if (empty($products)): ?>
-                <tr>
-                    <td colspan="5" style="text-align:center;">You have no products added in your Shopping Cart</td>
-                </tr>
+<div class="cart">
+    <div class="return-button">
+        <button class="coffee" id="neu-button">
+            <a href="products.php"><i class="fas fa-coffee"></i></a>
+        </button>
+        <h3>Shopping Cart</h3>
+        <button class="search" id="neu-button">
+            <i class="fas fa-search"></i>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search product">
+
+        </button>
+    </div>
+    <form action="cart.php" method="post" class="cart-list">
+        <div>
+
+            <?php if (empty($products)): ?>
+                <h1>
+                    You have no products added in your Shopping Cart
+                </h1>
                 <?php else: ?>
                 <?php foreach ($products as $product): ?>
-                <tr>
-                    <td class="img">
-                        <a href="product.php?id=<?=$product['id']?>">
-                            <img src="imgs/<?=$product['img']?>" width="50" height="50" alt="<?=$product['name']?>">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="product.php?id=<?=$product['id']?>"><?=$product['name']?></a>
-                        <br>
-                        <a href="cart.php?remove=<?=$product['id']?>" class="remove">Remove</a>
-                    </td>
-                    <td class="price">&dollar;<?=$product['price']?></td>
-                    <td class="quantity">
-                        <input type="number" name="quantity-<?=$product['id']?>" value="<?=$products_in_cart[$product['id']]?>" min="1" max="<?=$product['quantity']?>" placeholder="Quantity" required>
-                    </td>
-                    <td class="price">&dollar;<?=$product['price'] * $products_in_cart[$product['id']]?></td>
-                </tr>
-                <?php endforeach; ?>
+                    <div class="frame cart-frame">
+                        <div class="cart-description">
+                            <a href="product.php?id=<?= $product['id'] ?>">
+                                <img src="<?= $product['img'] ?>" width="300" height="300" alt="<?= $product['name'] ?>">
+                            </a>
+                            <div class="cart-info">
+
+                                <a href="product.php?id=<?= $product['id'] ?>">
+                                    <?= $product['name'] ?>
+                                </a>
+                                <br>
+                                <a href="cart.php?remove=<?= $product['id'] ?>" class="remove">Remove</a>
+                                <br>
+
+                                <span class="price">&dollar;<?= $product['price'] ?></td>
+                                    <span class="quantity">
+                                        <br>
+                                        <input type="number" name="quantity-<?= $product['id'] ?>"
+                                            value="<?= $products_in_cart[$product['id']] ?>" min="1"
+                                            max="<?= $product['quantity'] ?>" placeholder="Quantity" required>
+                                    </span>
+                                    <br>
+                                    <span class="price">&dollar;<?= $product['price'] * $products_in_cart[$product['id']] ?></span>
+                                    <br>
+                                    <input type="submit" value="Update" name="update">
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
                 <?php endif; ?>
-            </tbody>
-        </table>
+        </div>
         <div class="subtotal">
             <span class="text">Subtotal</span>
-            <span class="price">&dollar;<?=$subtotal?></span>
+            <span class="price">&dollar;<?= $subtotal ?></span>
         </div>
         <div class="buttons">
             <input type="submit" value="Update" name="update">
@@ -138,4 +150,4 @@ if ($products_in_cart) {
     </form>
 </div>
 
-<?=template_footer()?>
+<?= template_footer() ?>

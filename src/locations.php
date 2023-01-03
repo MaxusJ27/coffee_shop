@@ -45,7 +45,7 @@ $BUSINESS_PATH = "/v3/businesses/";
 // Defaults for our simple example.
 $DEFAULT_TERM = "cafe";
 $DEFAULT_LOCATION = "Selangor";
-$SEARCH_LIMIT = 3;
+$SEARCH_LIMIT = 8;
 
 
 /**
