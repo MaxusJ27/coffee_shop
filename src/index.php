@@ -23,70 +23,72 @@ session_start();
     </div>
 </div>
 <div class="info-cards" id="guide">
-    <div class="row">
-        <div class="column">
-            <div class="card" id="card-1">
-                <div class="face face1">
-                    <div class="content-2">
-                        <span class="stars">
-                            <h1>Need A Coffee?</h1>
-                            <p id="four">
-                                Covfee uses the latest machine learning recommendation system 
-                                to help find one that most suits you!
-                            </p>
-                        </span>
+    <div data-aos="fade-up" data-aos-duration="1500">
+        <div class="row">
+            <div class="column">
+                <div class="card" id="card-1">
+                    <div class="face face1">
+                        <div class="content-2">
+                            <span class="stars">
+                                <h1>Need A Coffee?</h1>
+                                <p id="four">
+                                    Covfee uses the latest machine learning recommendation system
+                                    to help find one that most suits you!
+                                </p>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="column">
-            <div class="card" id="card-2">
-                <div class="face face1">
-                    <div class="content-1">
-                        <span class="stars">
-                            <h1>Where Do I Order?</h1>
-                            <p>
-                                Click on the
-                                <button onclick="location.href='products.php'" id="one">product</button>
-                                button where you will be redirected to our product page.
-                            </p>
-                        </span>
+            <div class="column">
+                <div class="card" id="card-2">
+                    <div class="face face1">
+                        <div class="content-1">
+                            <span class="stars">
+                                <h1>Where Do I Order?</h1>
+                                <p>
+                                    Click on the
+                                    <button onclick="location.href='products.php'" id="one">product</button>
+                                    button where you will be redirected to our product page.
+                                </p>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="column">
-            <div class="card" id="card-3">
-                <div class="face face1">
-                    <div class="content-3">
-                        <span class="stars">
-                            <h1>When Should I Travel?</h1>
-                            <p id="three">
-                                The best time
-                                to do your travelling is between December and April.
-                                Otherwise, make sure you have an umbrella with you at all times!
-                            </p>
-                        </span>
+            <div class="column">
+                <div class="card" id="card-3">
+                    <div class="face face1">
+                        <div class="content-3">
+                            <span class="stars">
+                                <h1>When Should I Travel?</h1>
+                                <p id="three">
+                                    The best time
+                                    to do your travelling is between December and April.
+                                    Otherwise, make sure you have an umbrella with you at all times!
+                                </p>
+                            </span>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-        </div>
-        <div class="column">
-            <div class="card" id="card-4">
-                <div class="face face1">
-                    <div class="content-2">
-                        <span class="stars">
-                            <h1>Want To Know More?</h1>
-                            <p id="two">
-                                Read up more about Covfee by clicking on this <button onclick="location.href='explore.php'" id="one">explore</button> button.
-                            </p>
-                        </span>
+            <div class="column">
+                <div class="card" id="card-4">
+                    <div class="face face1">
+                        <div class="content-2">
+                            <span class="stars">
+                                <h1>Want To Know More?</h1>
+                                <p id="two">
+                                    Read up more about Covfee by clicking on this <button
+                                        onclick="location.href='explore.php'" id="one">explore</button> button.
+                                </p>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
 <?= template_footer() ?>

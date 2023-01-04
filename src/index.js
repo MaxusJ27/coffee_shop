@@ -1,5 +1,5 @@
 import { Gradient } from './Gradient.js'
-
+AOS.init();
 // Create your instance
 const gradient = new Gradient()
 
