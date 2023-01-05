@@ -8,11 +8,13 @@ session_start();
 ?>
 <?= template_header('Explore') ?>
 <div class="explore-main">
-    <div class="explore-title">
-        <h1>Explore</h1>
-        <h5>Learn more about the different coffees out there so that you can make better decisions.</h5>
-    </div>
     <div class="explore-info">
+        <div class="explore-title">
+            <h1 data-aos="fade-left" data-aos-duration="800">Explore</h1>
+            <h5 data-aos="fade-right" data-aos-duration="1600">Learn more about the different coffees out there so that
+                you
+                can make better decisions.</h5>
+        </div>
         <div class="coffee-infographics">
             <img src="../assets/coffee-info-1-removebg-preview.png" alt="coffee-info">
         </div>
@@ -27,7 +29,7 @@ session_start();
         </div> -->
 
         <div class="animated-about-title">
-            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2500">
+            <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="2500">
                 <div class="text-top">
                     <span>Introducing </span>
                 </div>
@@ -61,32 +63,80 @@ session_start();
                         <div class="carousel-item">
                             <div class="item">
                                 <div class="item-left">
-                                    <p>Geoloco also provides you with the proper guidance and tips for travelling,
-                                        so that you can enjoy your travel without the headache that may come with
-                                        it. The tips are also personalized and relevant to the specific places
-                                        you're travelling to.
+                                    <h1>Americano</h1>
+                                    <p>Caffè Americano is a type of coffee drink prepared by diluting an espresso with
+                                        hot water, giving it a
+                                        similar strength to, but different flavor from, traditionally brewed coffee. Its
+                                        strength varies with the number of shots of espresso and amount of water added.
+                                        The name is also spelled with varying capitalization and use of diacritics:
+                                        e.g., café americano.
+
+                                        In Italy, caffè americano may mean either espresso with hot water or
+                                        long-filtered coffee, but the latter is more precisely called caffè
+                                        all'americana.
                                     </p>
                                 </div>
                                 <div class="item-right">
-                                    <img src="../assets/carousel/langkawi-cropped.png" alt="second slide img">
+                                    <img src="../assets/americano-1-removebg-preview.png" alt="second slide img">
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="item">
                                 <div class="item-left">
-                                    <p>
-                                        Geoloco updates you with the check out the latest undiscovered places in
-                                        Malaysia
-                                        for convenience. It also informs you about the situations that may affect
-                                        your travels, such as weather forecast, haze, etc.
+                                    <h1>Mocha</h1>
+                                    <p>A caffè mocha, also called mocaccino, is a chocolate-flavoured warm beverage that
+                                        is a variant of a
+                                        caffè latte, commonly served in a glass rather
+                                        than a mug. Other commonly used spellings are mochaccino and also mochachino.
+                                        The name is derived from the city of Mocha, Yemen, which was one of the centres
+                                        of early coffee trade. Like latte, the name is commonly shortened to just
+                                        mocha.
                                     </p>
                                 </div>
                                 <div class="item-right">
-                                    <img src="../assets/carousel/cropped-masjid-kristal-2.png" alt="third slide img">
+                                    <img src="../assets/mocha-1-removebg-preview (3).png" alt="third slide img">
                                 </div>
                             </div>
                         </div>
+                        <div class="carousel-item">
+                            <div class="item">
+                                <div class="item-left">
+                                    <h1>Espresso</h1>
+                                    <p>Espresso is a coffee-brewing method
+                                        of Italian origin, in which a small amount of nearly boiling water is forced
+                                        under high of pressure
+                                        through finely-ground coffee beans. Espresso can be made with a wide variety of
+                                        coffee beans and roast degrees. Espresso is the most common way of making coffee
+                                        in southern Europe, especially in Italy, France, Spain, and Portugal. It is also
+                                        popular in Switzerland, Croatia, Bosnia and Herzegovina, Bulgaria, Greece, South
+                                        Africa, the United Kingdom, the United States, Canada, Australia and New
+                                        Zealand.
+                                    </p>
+                                </div>
+                                <div class="item-right">
+                                    <img src="../assets/espresso-1-removebg-preview.png" alt="fourth slide img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="item">
+                                <div class="item-left">
+                                    <h1>Latte</h1>
+                                    <p>Caffè latte (Italian: [kafˌfɛ lˈlatte][1][2]), often shortened to just latte
+                                        (/ˈlɑːteɪ, ˈlæteɪ/)[3][4] in English, is a coffee beverage of Italian origin
+                                        made with espresso and steamed milk. Variants include the chocolate-flavored
+                                        mocha or replacing the coffee with another beverage base such as masala chai
+                                        (spiced Indian tea), mate, matcha, turmeric or rooibos; alternatives to milk,
+                                        such as soy milk or almond milk, are also used.
+                                    </p>
+                                </div>
+                                <div class="item-right">
+                                    <img src="../assets/latte.png" alt="fifth slide img">
+                                </div>
+                            </div>
+                        </div>
+
 
                     </div>
                     <div class="carousel-indicators">
@@ -96,6 +146,10 @@ session_start();
                         <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="1"
                             class="img-thumbnail" id="carousel-button-2"></button>
                         <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="2"
+                            class="img-thumbnail" id="carousel-button-3"></button>
+                        <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="3"
+                            class="img-thumbnail" id="carousel-button-3"></button>
+                        <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="4"
                             class="img-thumbnail" id="carousel-button-3"></button>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselPlaces"

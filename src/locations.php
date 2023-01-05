@@ -213,35 +213,36 @@ $locations = query_api($term, $location, $SEARCH_LIMIT);
         </video>
     </div>
 
-    <div class="places">
-        <h1>Places</h1>
-        <div class="info-cards location-list">
-            <div class="row">
-                <?php foreach ($locations as $location): ?>
-                    <div class="column location-col">
-                        <div class="card place" onclick="window.location='<?= $location->url ?>'">
-                            <div class="face face1 loc-card">
-                                <div class="place-img">
-                                    <img src="<?= $location->imgUrl ?>" width="200" height="200"
-                                        alt="<?= $product['name'] ?>">
-                                </div>
-                                <!-- <a href="<?= $location->url ?>">
-                                        </a> -->
-                                <div class="place-description">
-                                    <span class="city">
-                                        <?= $location->city ?>
-                                    </span>
-                                    <br>
-                                    <span class="name">
-                                        <?= $location->name ?>
-                                    </span>
-                                </div>
+    <!-- </div> -->
+</div>
+<!-- <div class="places">
+    <h1>Places</h1> -->
+    <div class="info-cards location-list">
+        <div class="row">
+            <?php foreach ($locations as $location): ?>
+                <div class="column location-col">
+                    <div class="card place" onclick="window.location='<?= $location->url ?>'">
+                        <div class="face face1 loc-card">
+                            <div class="place-img">
+                                <img src="<?= $location->imgUrl ?>" width="200" height="200"
+                                    alt="<?= $product['name'] ?>">
+                            </div>
+                            <!-- <a href="<?= $location->url ?>">
+                                    </a> -->
+                            <div class="place-description">
+                                <span class="city">
+                                    <?= $location->city ?>
+                                </span>
+                                <br>
+                                <span class="name">
+                                    <?= $location->name ?>
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <?php endforeach; ?>
-            </div>
+                </div>
+                <?php endforeach; ?>
         </div>
     </div>
-    <!-- </div> -->
-</div>
+<!-- </div> -->
+<?= template_footer() ?>

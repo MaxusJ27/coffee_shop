@@ -130,9 +130,135 @@ header {
   left: 0;
   z-index: 3;
 }
+/* animated background for coffee */
+.area{
+  background: #4e54c8;  
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+  width: 100%;
+  /* height:100vh; */
+  height: 100%;
+  
+ 
+}
 
+.circles{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li{
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+  
+}
+
+.circles li:nth-child(1){
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+  0%{
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
+  }
+
+  100%{
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
+  }
+
+}
+
+/* coffee image */
 .home-image img {
-  width: 450px;
+  width: 650px;
 
   position: absolute;
   right: 10%;
@@ -141,12 +267,13 @@ header {
 }
 
 .gradient-container {
-  height: 650px;
-  width: 640px;
+  height: 680px;
+  width: 100%;
+  overflow: hidden;
 }
 
 #gradient-canvas {
-  /* width: 100%; */
+  width: 100%;
   height: 100%;
   --gradient-color-1: #1c0a00;
   --gradient-color-2: #361500;
@@ -154,7 +281,7 @@ header {
   --gradient-color-4: #cc9544;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 80px;
   z-index: 1;
 }
 
@@ -345,3 +472,231 @@ only two cards are in each row */
   }
 }
 
+/* 
+  Design for the Company Section
+*/
+.company {
+  display: flex;
+  height: 650px;
+  /* position: relative; */
+}
+
+.company-info {
+  position: absolute;
+  padding: 5% 10%;
+  z-index: 100;
+  color: white;
+}
+
+/* Adjust the dimensions of the video */
+#company-video {
+  object-fit: fill;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  background-size: cover;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Container for the company logo and title */
+.company-logo {
+  display: flex;
+  border-bottom: 2px solid white;
+}
+
+.company-logo img {
+  height: 8rem;
+}
+
+/* Adjust the texts in the container */
+.company-title {
+  display: inline-block;
+  padding: 5% 8%;
+}
+
+.company-title h2 {
+  color: black;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  text-shadow:
+    0px 7px rgba(0, 0, 0, 0.3),
+    -3px 0px 7px rgba(0, 0, 0, 0.3),
+    0px 4px 7px rgba(255, 255, 255, 0.3);
+}
+
+/* Adjust the texts for the company address */
+.company-address {
+  display: flex;
+  border-bottom: 2px solid white;
+}
+
+.company-address-text {
+  display: inline-block;
+  padding: 10% 2%;
+  max-width: 400px;
+}
+
+.company-address-text h2 {
+  color: black;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-shadow:
+    0px 2px rgba(0, 0, 0, 0.3),
+    -3px 0px 2px rgba(0, 0, 0, 0.3),
+    0px 2px 2px rgba(255, 255, 255, 0.3);
+}
+
+.company-address-text h3 {
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.25;
+  font-size: 1em;
+  text-shadow:
+    0px 2px rgba(0, 0, 0, 0.3),
+    -3px 0px 2px rgba(0, 0, 0, 0.3),
+    0px 2px 2px rgba(255, 255, 255, 0.3);
+  transition: 0.3s ease-in;
+}
+
+.company-address-text h3:hover {
+  color: black;
+  transform: translateX(5px);
+  cursor: pointer;
+}
+
+.company-address-text i {
+  font-size: 1.25em;
+  transition: 0.3s ease-in-out;
+}
+
+.company-address-text i:hover {
+  transform: scale(1.2);
+  font-size: 1.25em;
+}
+
+.company-location {
+  padding: 10% 2%;
+  font-size: 3em;
+  text-shadow:
+    0px 7px rgba(0, 0, 0, 0.3),
+    -3px 7px 2px rgba(0, 0, 0, 0.3),
+    0px 2px 7px rgba(255, 255, 255, 0.3);
+  transition: 0.5s ease-in;
+
+}
+
+.company-location:hover {
+  cursor: pointer;
+  transform: translateX(-5px);
+}
+
+.company-quote {
+  padding: 2% 2%;
+  width: 400px;
+  font-size: .9em;
+  font-weight: 400;
+}
+
+/* Design for the company social icons */
+.company-socials {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+}
+
+.company-socials h4 {
+  font-size: 1.25em;
+  margin-right: 1rem;
+  color: #565661;
+  transition: 0.5s ease-in;
+}
+
+.company-socials i {
+  margin-top: 0.5rem;
+}
+
+#insta {
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+#insta-h4:hover {
+  cursor: pointer;
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: translateY(5px);
+}
+
+#youtube {
+  color: red;
+}
+
+#youtube-h4:hover {
+  cursor: pointer;
+  color: red;
+  transform: translateY(5px);
+}
+
+#facebook-h4:hover {
+  cursor: pointer;
+  color: blue;
+  transform: translateY(5px);
+}
+
+#facebook {
+  color: blue;
+}
+
+#linkedin {
+  color: white;
+  transition: 0.3s ease-in;
+}
+
+#linked-h4:hover {
+  cursor: pointer;
+  color: white;
+  transform: translateY(5px);
+}
+
+@media screen and (max-width: 700px) {
+
+  .company-logo img {
+    height: 6rem;
+  }
+
+  .company {
+    height: 550px;
+  }
+
+  .company-address-text h2 {
+    font-size: 1em;
+  }
+
+  .company-address-text h3 {
+    font-size: 0.75em;
+  }
+
+  .company-location {
+    font-size: 2em;
+  }
+
+  .company-socials {
+    font-size: 0.75em;
+  }
+}

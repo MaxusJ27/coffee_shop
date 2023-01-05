@@ -20,7 +20,7 @@ function pdo_connect_mysql()
 // Template header, feel free to customize this
 function template_header($title)
 {
-    $num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+    $num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) - 1 : 0;
     echo <<<EOT
     <!DOCTYPE html>
     <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -77,8 +77,51 @@ function template_footer()
     echo <<<EOT
         </main>
         <footer>
-            <div class="content-wrapper">
-                <p>&copy; $year, Shopping Cart System</p>
+        <div class="company" id="company">
+                <div class="company-info">
+                    <div class="company-logo">
+                        <img src="../assets/logo-circle-2.png" alt="logo-name">
+                        <div class="company-title">
+                            <h2>Company Information</h2>
+                        </div>
+                    </div>
+                    <div class="company-address">
+
+                        <div class="company-address-text">
+                            <h2>
+                                Jalan Sunsuria, Bandar Sunsuria, 43900 Sepang, Selangor
+                            </h2>
+                            <h2>
+                                +6012345678
+                                <a href="#"><i class="bx bxl-whatsapp"></i></a>
+                                <a href="#"><i class="bx bxl-telegram"></i></a>
+                            </h2>
+                            <h3>
+                                CST2004268@xmu.edu.my
+                            </h3>
+                        </div>
+                        <div class="company-location"
+                            onclick="window.open('https://goo.gl/maps/5S55Jogw8S5EgsMs7','mywindow');">
+                            📌
+                        </div>
+                    </div>
+                    <div class="company-quote">
+                        Covfee provides services to everyone without discrimination as
+                        long you have money.
+                    </div>
+
+                    <div class="company-socials">
+                        <h4 id="facebook-h4"><i class="bx bxl-facebook" id="facebook"></i> </a>Facebook </h4>
+                        <h4 id="insta-h4"><i class="bx bxl-instagram" id="insta"></i> </a>Instagram </h4>
+                        <h4 id="linked-h4"><i class="bx bxl-linkedin" id="linkedin"></i> </a>Linkedin </h4>
+                        <h4 id="youtube-h4"><i class="bx bxl-youtube" id="youtube"></i> </a>Youtube </h4>
+
+
+                    </div>
+                </div>
+                <video autoplay muted loop id="company-video">
+                    <source src="../assets/Coffee-Footer.mp4" type="video/mp4">
+                </video>
             </div>
         </footer>
         <!-- connecting to Bootstrap cdn -->

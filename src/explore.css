@@ -3,21 +3,25 @@
 */
 .explore-main {
   background: rgb(239, 194, 12);
-  height: 640px;
+  /* position: absolute; */
+  overflow: hidden;
+}
+.explore-info {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10rem;
+  padding: 10%;
 }
 .explore-title {
-  position: absolute;
-  padding: 10% 8%;
+  position: relative;
+  /* padding: 10% 8%; */
   display: inline-block;
-  width: 450px;
+  width: 60%;
 }
-.explore-carousel {
+/* .explore-carousel {
   padding: 5%;
-}
-.coffee-infographics {
-  padding: 10%;
-  text-align: center;
-}
+} */
+
 .coffee-infographics img {
   height: 450px;
   position: relative;
@@ -25,9 +29,11 @@
   /* transform: perspective(200px) rotate3D(1, 0, 0, -15deg); */
 }
 .info-carousel {
-    background-color: #B8C6DB;
-    height: 540px;
+    /* background-color: #e6cd12; */
+    /* height: 900px; */
     display: flexbox;
+    box-shadow: 0 0 10px 10px rgb(244, 202, 13);
+    /* margin-top: 5rem; */
   }
   
   /* absolute positioned title so that it does not change 
@@ -36,7 +42,7 @@
     font-family: Roboto, Arial, sans-serif;
     display: block;
     font-size: 3.5em;
-    left: 11rem;
+    left: 6.5rem;
     margin-top: 10vmin;
     z-index: 9;
     position: absolute;
@@ -63,7 +69,7 @@
   }
   
   .item {
-    background: linear-gradient(to right, #F5F7FA 0%, #B8C6DB 100%);
+    background: linear-gradient(to right, #eaa10d 0%, #e8a807 100%);
     display: flex;
     height: 40rem;
   }
@@ -73,18 +79,21 @@
     flex: 1;
     letter-spacing: 0.05em;
     font-size: 1.2em;
-    margin-top: 12rem;
+    margin-top: 8rem;
     margin-left: 5rem;
   }
   
   .item-right {
     flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
   }
   
   .item-right img {
-    /* width: 100%; */
-    padding: 15% 5%;
-    height: 30rem;
+    /* left: 25%; */
+     margin-top: 5%;
     
   }
   
@@ -259,7 +268,7 @@
       padding: 1em;
       flex: 0.5;
       font-size: 1em;
-      margin-top: 25vmin;
+      margin-top: 20vmin;
       margin-left: 2rem;
     }
   }

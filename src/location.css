@@ -1,9 +1,10 @@
 
+
 .locations-main {
     display: flex;
     /* display: inline-block; */
     min-width: 240px;
-    height: 720px;
+    min-height: 720px;
     position: relative;
 }
 
@@ -13,6 +14,7 @@
     position: absolute;
     width: 25%;
 }
+
 .location-description h2 {
     line-height: 1.5;
     font-size: 3em;
@@ -27,34 +29,41 @@ p {
 .places {
     padding: 2% 10%;
 }
-
 .location-list {
     background-color: transparent;
+    height: 150rem;
 }
+
+/* length of each card  */
 .place {
-    height: 600px;
+    height: 35rem;
     background-color: transparent;
     box-shadow: none;
 }
+
 .place-img {
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
     border: none;
 }
+
 .place-img img {
     width: 400px;
     height: 400px;
     margin: 2rem;
 }
+
 .column .location-col {
     background: transparent;
 }
+
 .loc-card {
     display: inline-block;
     background: transparent;
     border: none;
 }
+
 .place-description {
     display: inline-block;
     /* width: 100px; */

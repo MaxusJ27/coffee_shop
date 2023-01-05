@@ -17,6 +17,7 @@
 $sql = "CREATE TABLE `products` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `name` varchar(200) NOT NULL,
+    `type` varchar(200) NOT NULL,
     `desc` text NOT NULL,
     `price` decimal(7,2) NOT NULL,
     `rrp` decimal(7,2) NOT NULL DEFAULT '0.00',

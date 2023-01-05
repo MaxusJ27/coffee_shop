@@ -21,7 +21,8 @@
 }
 .cart-description img {
     position: relative;
-    top: -20px;
+    top: -50px;
+    left: -25px;
 }
 
 .cart-info {

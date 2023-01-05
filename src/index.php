@@ -14,10 +14,30 @@ session_start();
     <div class="triangle">
         <div class="home-content">
             <div class="home-text">
-                <h1>Welcome, <?= $_SESSION['name'] ?></h1>
+                <h1>
+                    Satisfy all your coffee cravings.
+                </h1>
+                <h2>Welcome, <?= $_SESSION['name'] ?></h2>
+                <p>
+                    Millions of coffee websites exists worldwide, but Covfee stands out being the offering
+                    . </p>
             </div>
             <div class="home-image">
-                <img src="../assets/coffee-3d-removebg-preview.png" alt="logo-image">
+                <div class="area">
+                    <ul class="circles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <img src="../assets/coffee-walking.gif" alt="logo-image">
             </div>
         </div>
     </div>
