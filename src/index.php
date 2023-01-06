@@ -13,14 +13,13 @@ session_start();
     </div>
     <div class="triangle">
         <div class="home-content">
-            <div class="home-text">
+            <div class="home-text" data-aos="fade-right" data-aos-duration="800">
                 <h1>
                     Satisfy all your coffee cravings.
                 </h1>
                 <h2>Welcome, <?= $_SESSION['name'] ?></h2>
                 <p>
-                    Millions of coffee websites exists worldwide, but Covfee stands out being the offering
-                    . </p>
+                    Millions of coffee websites exists worldwide, but Covfee stands out being the offering the cheapest coffee products in the market.</p>
             </div>
             <div class="home-image">
                 <div class="area">
@@ -42,7 +41,7 @@ session_start();
         </div>
     </div>
 </div>
-<div class="info-cards" id="guide">
+<div class="info-cards index-card" id="guide">
     <div data-aos="fade-up" data-aos-duration="1500">
         <div class="row">
             <div class="column">

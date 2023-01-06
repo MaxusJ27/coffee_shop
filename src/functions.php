@@ -20,7 +20,7 @@ function pdo_connect_mysql()
 // Template header, feel free to customize this
 function template_header($title)
 {
-    $num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) - 1 : 0;
+    $num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
     echo <<<EOT
     <!DOCTYPE html>
     <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -39,6 +39,7 @@ function template_header($title)
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="products.css">
@@ -50,23 +51,25 @@ function template_header($title)
     </head>
     
     <body class="loggedIn">
-        <!-- <header class="header"> -->
-    
-        <header id="navbar">
-        <ul class="navlist">
         
+    
+    
+    <header id="navbar">
+    <a href="#" class="logo">
+    <img src="../assets/logo-circle-2.png" alt="logo">
+</a>
+        <ul class="navlist">
         <li><a href="register.php"><i class="fas fa-sign-out-alt fa-rotate-180"></i></a></li>
-        <li><a href="index.php">About</a></li>
-        <li><a href="products.php">Products</a></li>
-        <a href="#" class="logo">
-        <img src="../assets/logo-circle-2.png" width="50" alt="logo">
-        </a>
-        <li><a href="locations.php">Locations</a></li>
-        <li><a href="explore.php">Explore</a></li>
-        <li><a href="cart.php"> <i class="fas fa-shopping-cart"><span>$num_items_in_cart</span></i><a/></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="products.php">Products</a></li>
+            <li><a href="locations.php">Locations</a></li>
+            <li><a href="explore.php">Explore</a></li>
+            <li><a href="cart.php"> <i class="fas fa-shopping-cart"><span>$num_items_in_cart</span></i><a/></li>
+            </ul>
+            
         </ul>
-            <div class="bx bx-menu" id="menu-icon"></div>
-        </header>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
     <main>
 EOT;
 }
@@ -120,7 +123,7 @@ function template_footer()
                     </div>
                 </div>
                 <video autoplay muted loop id="company-video">
-                    <source src="../assets/Coffee-Footer.mp4" type="video/mp4">
+                    <source src="../assets/Coffee-Backgroun.mp4" type="video/mp4">
                 </video>
             </div>
         </footer>
@@ -129,6 +132,8 @@ function template_footer()
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
     <script src="tab.js"></script>
     <script src="product.js"></script>
+    <script src="header.js"></script>
+    
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     </body>
 </html>

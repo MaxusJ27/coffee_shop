@@ -18,31 +18,29 @@ ul {
 }
 
 header {
-  z-index: 100;
-  height: 70px;
+  z-index: 1000;
+  background: #df9627;
   position: fixed;
   width: 100%;
-  background-color: #CC9544;
+  height: 80px;
+  top: 0;
   right: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 25px 6%;
   transition: top 0.5s;
 }
 
 /* flex navigation list  */
 .navlist {
   display: flex;
-  column-gap: 3rem;
-  padding-top: 1.2rem;
-
+  padding-top: 1rem;
+  column-gap: 1rem;
 }
 
 .navlist li {
-  height: 50px;
   border-radius: 50px;
-  align-items: center;
-  text-align: center;
   background: #CC9544;
   box-shadow: 14px 14px 28px #ad7f3a,
     -14px -14px 28px #ebab4e;
@@ -50,8 +48,6 @@ header {
 }
 
 .navlist li:hover, li:active {
-  /* border-radius: 50%;
-  background: #CC9544; */
   box-shadow: inset 10px 10px 21px #b8863d,
     inset -10px -10px 21px #e0a44b;
 }
@@ -62,6 +58,7 @@ header {
   color: white;
   text-transform: capitalize;
   font-weight: 500;
+  /* padding: 15px 15px; */
   transition: all 0.4s ease-in-out;
   text-decoration: none;
 }
@@ -74,7 +71,7 @@ header {
 
 /* logo image design */
 .logo img {
-  width: 3.5rem;
+  width: 3rem;
   transition: 1s ease-in-out;
 }
 
@@ -82,6 +79,77 @@ header {
 .logo img:hover {
   transform: scale(1.1);
 }
+/* responsive design; for burger icon when navlist is hidden */
+#menu-icon {
+  font-size: 1.5em;
+  color: white;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+/* animation when hovering over icon */
+#menu-icon:hover {
+  transform: translateX(-30%);
+}
+@media (min-width: 800px) {
+  #menu-icon {
+    display: none;
+  }
+}
+
+@media(max-width: 788px) {
+  header {
+    padding: 25px 3%;
+    transition: .3s;
+  }
+}
+@media(max-width: 800px) {
+
+  /* before the burger icon is clicked, hide the 
+  nav list  */
+  .navlist {
+    position: absolute;
+    top: -500px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(255, 166, 0, 0.455);
+    column-gap: 0.5rem;
+    text-align: center;
+    transition: all .5s;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    background: (17, 148, 242, 0.732);
+
+  }
+
+  .navlist a {
+    display: block;
+    padding: 4px;
+    color: white;
+    letter-spacing: 0.1em;
+  }
+  .navlist li {
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  /* show the navlist upon clicking */
+  .navlist.open {
+    top: 100%;
+  }
+
+  .logo img {
+    width: 2.5rem;
+  }
+
+  #menu-icon {
+    transition: 0.5s ease-in;
+  }
+}
+
+
 
 .main-page {
   height: 750px;
@@ -113,7 +181,7 @@ header {
   /* width: 500px; */
   width: 100%;
   height: 680px;
-  background: linear-gradient(to bottom right, white 0%, white 50%, rgba(255, 0, 0, 0) 50%, rgba(255, 0, 0, 0) 100%);
+  background: linear-gradient(to bottom right, black 0%, black 50%, rgba(255, 0, 0, 0) 50%, rgba(255, 0, 0, 0) 100%);
   border-color: transparent #000000 transparent transparent;
 }
 
@@ -124,11 +192,19 @@ header {
 }
 
 .home-text {
-  /* float: right; */
+  width: 250px;
   position: relative;
   top: 0;
   left: 0;
   z-index: 3;
+}
+.home-text h1 {
+  background: -webkit-linear-gradient(#eee, #ebab4e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.home-text h2 {
+  color: white;
 }
 /* animated background for coffee */
 .area{
@@ -267,21 +343,20 @@ header {
 }
 
 .gradient-container {
-  height: 680px;
   width: 100%;
   overflow: hidden;
 }
 
 #gradient-canvas {
   width: 100%;
-  height: 100%;
+  height: 680px;
   --gradient-color-1: #1c0a00;
   --gradient-color-2: #361500;
   --gradient-color-3: #603601;
   --gradient-color-4: #cc9544;
   position: absolute;
   left: 0;
-  top: 80px;
+  /* top: 80px; */
   z-index: 1;
 }
 
@@ -293,8 +368,10 @@ header {
 .info-cards {
   display: block;
   height: 65rem;
-  background-color: #e0e0e0;
   align-items: center;
+}
+.index-card {
+  background-color: black;
 }
 
 /* align card items in a row an column wise */
@@ -516,7 +593,7 @@ only two cards are in each row */
 }
 
 .company-title h2 {
-  color: black;
+  color: white;
   font-size: 2em;
   font-weight: bold;
   text-transform: uppercase;
@@ -541,7 +618,7 @@ only two cards are in each row */
 }
 
 .company-address-text h2 {
-  color: black;
+  color: white;
   font-size: 1.25em;
   font-weight: bold;
   text-transform: uppercase;
@@ -554,7 +631,7 @@ only two cards are in each row */
 }
 
 .company-address-text h3 {
-  color: black;
+  color: white;
   font-weight: bold;
   text-transform: uppercase;
   line-height: 1.25;
@@ -567,7 +644,7 @@ only two cards are in each row */
 }
 
 .company-address-text h3:hover {
-  color: black;
+  color: silver;
   transform: translateX(5px);
   cursor: pointer;
 }
