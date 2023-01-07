@@ -11,9 +11,9 @@ session_start();
     <div class="explore-info">
         <div class="explore-title">
             <h1 data-aos="fade-left" data-aos-duration="800">Explore</h1>
-            <h5 data-aos="fade-right" data-aos-duration="1600">Learn more about the different coffees out there so that
+            <p data-aos="fade-right" data-aos-duration="1600">Learn more about the different coffees out there so that
                 you
-                can make better decisions.</h5>
+                can make better decisions. Most of the coffee products sold are usually variations or combinations of the 5 types shown below.</p>
         </div>
         <div class="coffee-infographics">
             <img src="../assets/coffee-info-1-removebg-preview.png" alt="coffee-info">
@@ -23,10 +23,6 @@ session_start();
 </div>
 <div class="explore-carousel">
     <div class="info-carousel" id="about-us">
-        <!-- <div class="logo-text">
-            <h1>Geoloco</h1>
-            <img src="../assets/icon/durian.png" alt="logo-name">
-        </div> -->
 
         <div class="animated-about-title">
             <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="2500">
@@ -47,11 +43,6 @@ session_start();
                                     <p>A cappuccino is an espresso-based coffee drink that originated in
                                         Austria and was later popularized in Italy and is prepared with steamed milk
                                         foam (microfoam).
-
-                                        Variations of the drink involve the use of cream instead of milk, using
-                                        non-dairy milk substitutes and flavoring with cinnamon or chocolate
-                                        powder. It is typically smaller in volume than a caffè latte, with a
-                                        thicker layer of microfoam.
                                     </p>
                                 </div>
                                 <div class="item-right" id="item-right-1">
@@ -66,14 +57,7 @@ session_start();
                                     <h1>Americano</h1>
                                     <p>Caffè Americano is a type of coffee drink prepared by diluting an espresso with
                                         hot water, giving it a
-                                        similar strength to, but different flavor from, traditionally brewed coffee. Its
-                                        strength varies with the number of shots of espresso and amount of water added.
-                                        The name is also spelled with varying capitalization and use of diacritics:
-                                        e.g., café americano.
-
-                                        In Italy, caffè americano may mean either espresso with hot water or
-                                        long-filtered coffee, but the latter is more precisely called caffè
-                                        all'americana.
+                                        similar strength to, but different flavor from, traditionally brewed coffee.
                                     </p>
                                 </div>
                                 <div class="item-right">
@@ -106,12 +90,7 @@ session_start();
                                     <p>Espresso is a coffee-brewing method
                                         of Italian origin, in which a small amount of nearly boiling water is forced
                                         under high of pressure
-                                        through finely-ground coffee beans. Espresso can be made with a wide variety of
-                                        coffee beans and roast degrees. Espresso is the most common way of making coffee
-                                        in southern Europe, especially in Italy, France, Spain, and Portugal. It is also
-                                        popular in Switzerland, Croatia, Bosnia and Herzegovina, Bulgaria, Greece, South
-                                        Africa, the United Kingdom, the United States, Canada, Australia and New
-                                        Zealand.
+                                        through finely-ground coffee beans.
                                     </p>
                                 </div>
                                 <div class="item-right">
@@ -123,12 +102,11 @@ session_start();
                             <div class="item">
                                 <div class="item-left">
                                     <h1>Latte</h1>
-                                    <p>Caffè latte (Italian: [kafˌfɛ lˈlatte][1][2]), often shortened to just latte
-                                        (/ˈlɑːteɪ, ˈlæteɪ/)[3][4] in English, is a coffee beverage of Italian origin
+                                    <p>Caffè latte often shortened to just latte
+                                        in English, is a coffee beverage of Italian origin
                                         made with espresso and steamed milk. Variants include the chocolate-flavored
                                         mocha or replacing the coffee with another beverage base such as masala chai
-                                        (spiced Indian tea), mate, matcha, turmeric or rooibos; alternatives to milk,
-                                        such as soy milk or almond milk, are also used.
+                                        (spiced Indian tea), mate, and matcha.
                                     </p>
                                 </div>
                                 <div class="item-right">

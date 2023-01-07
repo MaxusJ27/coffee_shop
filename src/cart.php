@@ -106,46 +106,51 @@ if ($products_in_cart) {
                 <h1>
                     You have no products added in your Shopping Cart
                 </h1>
-                <?php else: ?>
+            <?php else: ?>
                 <?php foreach ($products as $product): ?>
-                    <div class="frame cart-frame">
+                    <div class="frame cart-frame" id="<?= $product['id'] ?>">
                         <div class="cart-description">
                             <a href="product.php?id=<?= $product['id'] ?>">
-                                <img src="<?= $product['img'] ?>" width="300" height="300" alt="<?= $product['name'] ?>">
+                                <img src="<?= $product['img'] ?>" height="300" width="300" alt="<?= $product['name'] ?>">
                             </a>
                             <div class="cart-info">
-
-                                <a href="product.php?id=<?= $product['id'] ?>">
+                                <a class="name" href="product.php?id=<?= $product['id'] ?>">
                                     <?= $product['name'] ?>
                                 </a>
-                                <br>
-                                <a href="cart.php?remove=<?= $product['id'] ?>" class="remove">Remove</a>
-                                <br>
 
-                                <span class="price">&dollar;<?= $product['price'] ?></td>
+                                <br>
+                                <span class="price">RM <?= $product['price'] ?></td>
                                     <span class="quantity">
                                         <br>
-                                        <input type="number" name="quantity-<?= $product['id'] ?>"
+                                        <input id="quantity-update" type="number" name="quantity-<?= $product['id'] ?>"
                                             value="<?= $products_in_cart[$product['id']] ?>" min="1"
-                                            max="<?= $product['quantity'] ?>" placeholder="Quantity" required>
+                                            max="<?= $product['quantity'] ?>" placeholder="1" required>
                                     </span>
                                     <br>
-                                    <span class="price">&dollar;<?= $product['price'] * $products_in_cart[$product['id']] ?></span>
+                                    <input id="update-button" type="submit" value="Update" name="update">
                                     <br>
-                                    <input type="submit" value="Update" name="update">
+                                    <span class="price">RM <?= $product['price'] * $products_in_cart[$product['id']] ?></span>
+                                    <br>
+                                    <!-- <br> -->
+                                    <!-- <li><a href="index.php">Home</a></li> -->
+                                    <li id="remove-button">
+                                        <a href="cart.php?remove=<?= $product['id'] ?>" class="remove">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </li>
+                                    <br>
                             </div>
                         </div>
                     </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+                        <?php endforeach; ?>
+            <?php endif; ?>
         </div>
         <div class="subtotal">
-            <span class="text">Subtotal</span>
+            <span class="text">Total</span>
             <span class="price">&dollar;<?= $subtotal ?></span>
-        </div>
-        <div class="buttons">
-            <input type="submit" value="Update" name="update">
-            <input type="submit" value="Place Order" name="placeorder">
+            <div class="buttons">
+                <input id="checkout" type="submit" value="Checkout" name="placeorder">
+            </div>
         </div>
     </form>
 </div>

@@ -18,7 +18,8 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="products-info">
     <div class="products-description">
         <h2 data-aos="fade-up" data-aos-duration="800">Choose your antidote.</h2>
-        <p data-aos="fade-up" data-aos-duration="1600">Covfee provides and recommends you a list of essential beverages to start your day fresh,
+        <p data-aos="fade-up" data-aos-duration="1600">Covfee provides and recommends you a list of essential beverages
+            to start your day fresh,
             whether it be something for a relaxing chilly season, or you need something to help your burn the
             midnight
             oil.
@@ -28,28 +29,17 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <source src="../assets/Coffee-Products.mp4" type="video/mp4">
     </video>
 </div>
-<div class="products">
-    <!-- <div class="products-info">
-        <div class="products-description">
-            <h2 data-aos="fade-up" data-aos-duration="800">Choose your antidote.</h2>
-            <p data-aos="fade-up" data-aos-duration="1600">Covfee provides and recommends you a list of essential beverages to start your day fresh,
-                whether it be something for a relaxing chilly season, or you need something to help your burn the
-                midnight
-                oil.
-            </p>
-        </div>
-        <video autoplay muted loop id="company-video">
-            <source src="../assets/Coffee-Products.mp4" type="video/mp4">
-        </video>
-    </div> -->
+<div class="products" id="products">
     <div class="products-lists">
         <div class="tab">
             <button class="tablinks" onclick="openLink(event, 'Recent')">Recently Added</button>
             <button class="tablinks" onclick="openLink(event, 'Relax')">Relaxing</button>
             <button class="tablinks" onclick="openLink(event, 'Energize')">Energizing</button>
         </div>
-        <div id="Recent" class="tabcontent">
-            <h2>Want something new? Look at our latest lists of products!</h2>
+        <div id="Recent" class="tabcontent" data-aos="fade-right" data-aos-duration="800">
+            <div class="tab-wrapper">
+                <h2>Want something new? Look at our latest lists of products!</h2>
+            </div>
             <div class="info-cards products-cards">
                 <div class="row">
                     <?php foreach ($recently_added_products as $product): ?>
@@ -60,29 +50,30 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <!-- <a href="product.php?id=<?= $product['id'] ?>"> -->
                                     <div class="prod">
                                         <!-- <div class="product-description"> -->
-                                            <span class="product-name">
-                                                <?= $product['name'] ?>
-                                            </span>
-                                            <!-- </div> -->
-                                            <div class="product-img">
-                                                <img src="<?= $product['img'] ?>" alt="<?= $product['name'] ?>">
-                                            </div>
-                                            <span class="product-price">
-                                                &dollar;<?= $product['price'] ?>
-                                                <?php if ($product['rrp'] > 0): ?>
-                                                    <?php endif; ?>
-                                            </span>
+                                        <span class="product-name">
+                                            <?= $product['name'] ?>
+                                        </span>
+                                        <!-- </div> -->
+                                        <div class="product-img">
+                                            <img src="<?= $product['img'] ?>" alt="<?= $product['name'] ?>">
+                                        </div>
+                                        <span class="product-price">
+                                            RM<?= $product['price'] ?>
+                                            
+                                        </span>
                                     </div>
                                     <!-- </a> -->
                                 </div>
                             </div>
                         </div>
-                        <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
-        <div id="Relax" class="tabcontent">
-            <h2>Feeling chilly? How about something to keep you warm and relaxed?</h2>
+        <div id="Relax" class="tabcontent" data-aos="fade-right" data-aos-duration="800">
+            <div class="tab-wrapper">
+                <h2>Feeling chilly? How about something to keep you warm and relaxed?</h2>
+            </div>
             <div class="info-cards products-cards">
                 <div class="row">
                     <?php foreach ($cold_products as $product): ?>
@@ -93,29 +84,31 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <!-- <a href="product.php?id=<?= $product['id'] ?>"> -->
                                     <div class="prod">
                                         <!-- <div class="product-description"> -->
-                                            <span class="product-name">
-                                                <?= $product['name'] ?>
-                                            </span>
-                                            <!-- </div> -->
-                                            <div class="product-img">
-                                                <img src="<?= $product['img'] ?>" alt="<?= $product['name'] ?>">
-                                            </div>
-                                            <span class="product-price">
-                                                &dollar;<?= $product['price'] ?>
-                                                <?php if ($product['rrp'] > 0): ?>
-                                                    <?php endif; ?>
-                                            </span>
+                                        <span class="product-name">
+                                            <?= $product['name'] ?>
+                                        </span>
+                                        <!-- </div> -->
+                                        <div class="product-img">
+                                            <img src="<?= $product['img'] ?>" alt="<?= $product['name'] ?>">
+                                        </div>
+                                        <span class="product-price">
+                                            RM
+                                            <?= $product['price'] ?>
+                                            
+                                        </span>
                                     </div>
                                     <!-- </a> -->
                                 </div>
                             </div>
                         </div>
-                        <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
-        <div id="Energize" class="tabcontent">
-            <h2>Beverages to energize your soul</h2>
+        <div id="Energize" class="tabcontent" data-aos="fade-right" data-aos-duration="800">
+            <div class="tab-wrapper">
+                <h2>Beverages to energize your soul</h2>
+            </div>
             <div class="info-cards products-cards">
                 <div class="row">
                     <?php foreach ($energy_products as $product): ?>
@@ -126,24 +119,23 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <!-- <a href="product.php?id=<?= $product['id'] ?>"> -->
                                     <div class="prod">
                                         <!-- <div class="product-description"> -->
-                                            <span class="product-name">
-                                                <?= $product['name'] ?>
-                                            </span>
-                                            <!-- </div> -->
-                                            <div class="product-img">
-                                                <img src="<?= $product['img'] ?>" alt="<?= $product['name'] ?>">
-                                            </div>
-                                            <span class="product-price">
-                                                &dollar;<?= $product['price'] ?>
-                                                <?php if ($product['rrp'] > 0): ?>
-                                                    <?php endif; ?>
-                                            </span>
+                                        <span class="product-name">
+                                            <?= $product['name'] ?>
+                                        </span>
+                                        <!-- </div> -->
+                                        <div class="product-img">
+                                            <img src="<?= $product['img'] ?>" alt="<?= $product['name'] ?>">
+                                        </div>
+                                        <span class="product-price">
+                                            RM<?= $product['price'] ?>
+                                            
+                                        </span>
                                     </div>
                                     <!-- </a> -->
                                 </div>
                             </div>
                         </div>
-                        <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

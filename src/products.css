@@ -5,10 +5,11 @@
     padding: 5%;
 } */
 .products-description {
-    padding: 8% 6%;
+    padding: 10% 8%;
     display: inline-block;
     position: absolute;
     width: 50%;
+    transition: 0.3s ease-in-out;
 }
 .company-description {
     height: 720px;
@@ -88,6 +89,7 @@ p {
 
 .tabcontent {
     display: none;
+    transition: 0.3s ease-in-out;
 }
 
 .products-cards {
@@ -100,8 +102,8 @@ p {
     cursor: pointer;
     border-radius: 25px;
     background: #c79243;
-    box-shadow: 35px 35px 70px #a97c39,
-        -35px -35px 70px #e5a84d;
+    box-shadow: 20px 20px 40px #e5a84d ,
+        -20px -20px 40px  #a97c39;
     }
 .prod {
     padding: 5%;
@@ -121,9 +123,30 @@ p {
     font-size: 2em;
     padding-bottom: 50px;
 }
-/* .product-description {
-    display: block;
-    height: 100%;
-    margin: 0 auto;
-} */
+.product-price {
+    font-family: "Purple Purse";
+    color: white;
+    font-size: 2rem;
+    font-weight: 100;
+    /* font-size: 3rem; */
+
+}
+.tab-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem;
+}
+.tab-wrapper h2 {
+    font-size: 1.5em;
+    color: beige;
+}
+
+@media(max-width: 800px) {
+    .products-description {
+        transform: scale(0.8);
+    }
+    
+}
+
 

@@ -17,6 +17,11 @@
   /* padding: 10% 8%; */
   display: inline-block;
   width: 60%;
+  transition: 0.3s ease-in;
+}
+.explore-title p {
+
+  color: black;
 }
 /* .explore-carousel {
   padding: 5%;
@@ -26,6 +31,7 @@
   height: 450px;
   position: relative;
   box-shadow: 0 0 10px 10px rgb(244, 202, 13);
+  transition: 0.3s ease-in-out;
   /* transform: perspective(200px) rotate3D(1, 0, 0, -15deg); */
 }
 .info-carousel {
@@ -77,8 +83,9 @@
   .item-left {
     padding: 1.5rem;
     flex: 1;
+    width: 100%;
     letter-spacing: 0.05em;
-    font-size: 1.2em;
+    font-size: 1em;
     margin-top: 8rem;
     margin-left: 5rem;
   }
@@ -92,9 +99,8 @@
   }
   
   .item-right img {
-    /* left: 25%; */
      margin-top: 5%;
-    
+     margin-right: 4%;
   }
   
   /* 
@@ -212,8 +218,7 @@
   @media screen and (max-width: 1100px) {
     .animated-about-title {
       transition: .5s;
-      margin-top: 3.5rem;
-      left: 11rem;
+      
       font-size: 2.5em;
     }
   
@@ -229,48 +234,38 @@
   
   @media screen and (max-width: 900px) {
     .animated-about-title {
-      left: 8rem;
+      /* left: 8rem; */
       font-size: 1.5em;
-      margin-top: 12vmin;
+      /* margin-top: 12vmin; */
     }
   
     .item {
       height: 30rem;
     }
   
-    .item-right {
-      flex: 1;
-    }
   
     .item-right img {
-      width: 100%;
-      height: 100%;
+      /* width: 100%; */
+      transform: scale(0.8);
+      /* margin-right: 10%; */
+      /* height: 100%; */
     }
-  
-    .logo-text {
-      left: 2rem;
-    }
-  
-    .logo-text h1 {
-      font-size: 1.5em;
-      margin-top: 2.5rem;
-    }
-  
+
     .text-top {
       margin-top: .75rem;
     }
   
-    .logo-text img {
-      height: 6vmin;
+    .item-left {
+      transform: scale(0.8);
+      /* flex: 0.5; */
+      margin-top: 4rem;
+      margin-left: 3.5rem;
+    }
+    .item-left p {
+      font-size: 1em;
+      width: 100%;
     }
   
-    .item-left {
-      padding: 1em;
-      flex: 0.5;
-      font-size: 1em;
-      margin-top: 20vmin;
-      margin-left: 2rem;
-    }
   }
   
   @media screen and (max-width: 600px) {
@@ -289,30 +284,29 @@
       height: 3rem;
     }
   
-    .animated-about-title {
-      left: 5.5rem;
+     .animated-about-title {
       font-size: 1.5em;
-      margin-top: 16vmin;
-    }
+     }
   
     .logo-text {
       left: 0.5rem;
     }
   
-    .logo-text h1 {
-      font-size: 1.5em;
-      margin-top: 2rem;
-    }
-  
-    .logo-text img {
-      height: 5vmin;
-    }
   
     .item-left {
-      transform: scale(0.8);
-    }
-    .item-left p {
-      font-size: 0.8em;
+      transform: scale(0.5);
     }
     
+    
   }
+
+  @media(max-width: 800px) {
+    .explore-title {
+        transform: scale(0.8);
+    }
+    .coffee-infographics img {
+      transform: scale(0.5);
+      right: 40%;
+    }
+    
+}

@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
 <div class="product">
     <div class="return-button">
         <button class="coffee" id="neu-button">
-            <a href="products.php"><i class="fas fa-coffee"></i></a>
+            <a href="products.php#products"><i class="fas fa-coffee"></i></a>
         </button>
         <h3>My order</h3>
         <button class="love" id="neu-button">
@@ -37,10 +37,10 @@ if (isset($_GET['id'])) {
             <?php if ($product['rrp'] > 0): ?>
                 <span class="rrp">&dollar;<?= $product['rrp'] ?></span>
                 <?php endif; ?>
-        </span>
-        <div class="description">
-            <?= $product['desc'] ?>
-        </div>
+            </span>
+            <div class="description">
+                <?= $product['desc'] ?>
+            </div>
         <form method="post" action="cart.php" id="product-form">
             <div class="frame">
                 <button onclick="decrement()" type="button" id="neu-button"><i class="fas fa-minus"></i></button>

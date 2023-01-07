@@ -230,12 +230,22 @@ $locations = query_api($term, $location, $SEARCH_LIMIT);
                             <!-- <a href="<?= $location->url ?>">
                                     </a> -->
                             <div class="place-description">
-                                <span class="city">
+                                <span class="name">
+                                    <?= $location->name ?>
+                                </span>
+                                <br>
+                                <span >
+                                    <?= $location->address ?>
+                                </span>
+                                <span >
+                                    <?= $location->zipCode ?>
+                                </span>
+                                <span>
                                     <?= $location->city ?>
                                 </span>
                                 <br>
-                                <span class="name">
-                                    <?= $location->name ?>
+                                <span>
+                                    Rating: <?= $location->rating ?>
                                 </span>
                             </div>
                         </div>

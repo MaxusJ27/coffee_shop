@@ -26,11 +26,15 @@ input::-webkit-inner-spin-button {
     /* text-align: center; */
 }
 
+#product-form {
+    display: flex;
+    column-gap: 3rem;
+}
+
 #neu-button {
     outline: none;
     width: 50px;
     height: 50px;
-    /* background: #f3f0f1; */
     border-radius: 50%;
     background: #c79243;
     box-shadow: 6px 6px 13px #c79243,
@@ -69,7 +73,8 @@ input::-webkit-inner-spin-button {
 
 #submit {
     text-align: center;
-    border-radius: 13px;
+    border-radius: 25px;
+    padding: 16px 25px;
     background: #c79243;
     box-shadow: 6px 6px 9px #8b662f,
         -6px -6px 9px #ffbe57;
@@ -97,5 +102,9 @@ input::-webkit-inner-spin-button {
 
 .product-description {
     position: relative;
-    left: 20%;
+    overflow: none;
+    padding-left: 25%;
+}
+.description {
+    width: 50%;
 }

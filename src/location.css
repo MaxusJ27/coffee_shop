@@ -39,6 +39,12 @@ p {
     height: 35rem;
     background-color: transparent;
     box-shadow: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.place:hover {
+    transform: scale(1.05);
+    background-color: rgba(245, 211, 64, 0.877);
 }
 
 .place-img {
@@ -49,8 +55,8 @@ p {
 }
 
 .place-img img {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     margin: 2rem;
 }
 
