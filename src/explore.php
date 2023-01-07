@@ -1,10 +1,6 @@
 <?php
 include 'functions.php';
 session_start();
-
-// $page = isset($_GET['page']) && file_exists($_GET['page'] . '.php') ? $_GET['page'] : 'home';
-// // Include and show the requested page
-// include $page . '.php';
 ?>
 <?= template_header('Explore') ?>
 <div class="explore-main">
@@ -13,10 +9,10 @@ session_start();
             <h1 data-aos="fade-left" data-aos-duration="800">Explore</h1>
             <p data-aos="fade-right" data-aos-duration="1600">Learn more about the different coffees out there so that
                 you
-                can make better decisions. Most of the coffee products sold are usually variations or combinations of the 5 types shown below.</p>
+                can make better decisions.</p>
         </div>
         <div class="coffee-infographics">
-            <img src="../assets/coffee-info-1-removebg-preview.png" alt="coffee-info">
+            <img src="./assets/explore/coffee-infographics.png" alt="coffee-info">
         </div>
     </div>
 
@@ -46,7 +42,7 @@ session_start();
                                     </p>
                                 </div>
                                 <div class="item-right" id="item-right-1">
-                                    <img src="../assets/capucinno-removebg-preview.png" alt="first slide img">
+                                    <img src="./assets/explore/capuccino.png" alt="first slide img">
                                 </div>
                             </div>
                         </div>
@@ -61,7 +57,7 @@ session_start();
                                     </p>
                                 </div>
                                 <div class="item-right">
-                                    <img src="../assets/americano-1-removebg-preview.png" alt="second slide img">
+                                    <img src="./assets/explore/americano.png" alt="second slide img">
                                 </div>
                             </div>
                         </div>
@@ -73,13 +69,10 @@ session_start();
                                         is a variant of a
                                         caffè latte, commonly served in a glass rather
                                         than a mug. Other commonly used spellings are mochaccino and also mochachino.
-                                        The name is derived from the city of Mocha, Yemen, which was one of the centres
-                                        of early coffee trade. Like latte, the name is commonly shortened to just
-                                        mocha.
                                     </p>
                                 </div>
                                 <div class="item-right">
-                                    <img src="../assets/mocha-1-removebg-preview (3).png" alt="third slide img">
+                                    <img src="./assets/explore/mocha.png" alt="third slide img">
                                 </div>
                             </div>
                         </div>
@@ -94,7 +87,7 @@ session_start();
                                     </p>
                                 </div>
                                 <div class="item-right">
-                                    <img src="../assets/espresso-1-removebg-preview.png" alt="fourth slide img">
+                                    <img src="./assets/explore/espresso.png" alt="fourth slide img">
                                 </div>
                             </div>
                         </div>
@@ -110,7 +103,7 @@ session_start();
                                     </p>
                                 </div>
                                 <div class="item-right">
-                                    <img src="../assets/latte.png" alt="fifth slide img">
+                                    <img src="./assets/explore/latte.png" alt="fifth slide img">
                                 </div>
                             </div>
                         </div>
@@ -126,9 +119,9 @@ session_start();
                         <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="2"
                             class="img-thumbnail" id="carousel-button-3"></button>
                         <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="3"
-                            class="img-thumbnail" id="carousel-button-3"></button>
+                            class="img-thumbnail" id="carousel-button-4"></button>
                         <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="4"
-                            class="img-thumbnail" id="carousel-button-3"></button>
+                            class="img-thumbnail" id="carousel-button-5"></button>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselPlaces"
                         data-bs-slide="prev">

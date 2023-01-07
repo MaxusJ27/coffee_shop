@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -6,17 +7,16 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
+/* set background color */
 body {
   background-color: #CC9544;
-  /* background-color: #ECECEC; */
 }
 
-
+/* remove style type for ul */
 ul {
   list-style-type: none;
 }
-
+/* Design for the Header Section  */
 header {
   z-index: 1000;
   background: #df9627;
@@ -38,7 +38,7 @@ header {
   padding-top: 1rem;
   column-gap: 1rem;
 }
-
+/* addign neumorphism design to li */
 .navlist li {
   border-radius: 50px;
   background: #CC9544;
@@ -46,7 +46,7 @@ header {
     -14px -14px 28px #ebab4e;
   padding: 1rem 1.5rem;
 }
-
+/* animation when hover over neumorphic li */
 .navlist li:hover, li:active {
   box-shadow: inset 10px 10px 21px #b8863d,
     inset -10px -10px 21px #e0a44b;
@@ -58,7 +58,6 @@ header {
   color: white;
   text-transform: capitalize;
   font-weight: 500;
-  /* padding: 15px 15px; */
   transition: all 0.4s ease-in-out;
   text-decoration: none;
 }
@@ -91,6 +90,7 @@ header {
 #menu-icon:hover {
   transform: translateX(-30%);
 }
+/* addign responsiveness to the header and navlist */
 @media (min-width: 800px) {
   #menu-icon {
     display: none;
@@ -150,7 +150,7 @@ header {
 }
 
 
-
+/* design for the main-page of index */
 .main-page {
   height: 750px;
   padding-top: 75px;
@@ -170,7 +170,7 @@ header {
   top: 0;
   left: 0;
 }
-
+/* black triangle design */
 .triangle {
   position: absolute;
   top: 0;
@@ -178,20 +178,19 @@ header {
   margin-top: 70px;
   z-index: 2;
   padding: 5%;
-  /* width: 500px; */
   width: 100%;
   height: 680px;
   background: linear-gradient(to bottom right, black 0%, black 50%, rgba(255, 0, 0, 0) 50%, rgba(255, 0, 0, 0) 100%);
   border-color: transparent #000000 transparent transparent;
 }
-
+/* design for content to be displayed in home */
 .home-content {
   display: flex;
   width: 100%;
   height: 100%;
   padding: 5%;
 }
-
+/* design for texts in home */
 .home-text {
   width: 250px;
   position: relative;
@@ -207,15 +206,12 @@ header {
 .home-text h2 {
   color: white;
 }
-/* animated background for coffee */
+/* animated circles background in home */
 .area{
   background: #4e54c8;  
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
   width: 100%;
-  /* height:100vh; */
   height: 100%;
-  
- 
 }
 
 .circles{
@@ -324,16 +320,14 @@ header {
       opacity: 1;
       border-radius: 0;
   }
-
   100%{
       transform: translateY(-1000px) rotate(720deg);
       opacity: 0;
       border-radius: 50%;
   }
-
 }
 
-/* coffee image */
+/* design for the walking coffee */
 .home-image img {
   width: 650px;
 
@@ -343,7 +337,7 @@ header {
   transition: 0.3s ease-in-out;
 
 }
-
+/* adding responsiveness to the walking coffee */
 @media(max-width: 850px) {
   
   .home-image img {
@@ -352,7 +346,7 @@ header {
     right: 0;
   }
 }
-
+/* design for the 3D animated gradient background */
 .gradient-container {
   width: 100%;
   overflow: hidden;
@@ -452,30 +446,38 @@ only two cards are in each row */
   Design for individual card elements
 */
 #card-1 {
-  background-image: url("../assets/card/coffee-products.png");
-  background-size: 20rem 15rem;
+  background-image: url("../assets/index/coffee-3d-removebg-preview.png");
+  background-size: 30rem 15rem;
   background-position: 50% 15%;
   background-color: rgb(172, 155, 99);
   background-repeat: no-repeat;
 }
 
 #card-2 {
+  background-color: beige;
   background-image: url("../assets/card/petronas-step-1-cropped.png");
-  background-size: 44rem 18rem;
+  background-size: 24rem 18rem;
   background-position: 50% 100%;
   background-repeat: no-repeat;
+  background-image: url("../assets/index/coffee-cup.png");
+}
+#card-2 p{
+  color: black;
 }
 
 #card-3 {
-  background-image: url("../assets/card/cloudy-skies.jpeg");
+  background-image: url("../assets/index/dark-cafe.jpeg");
   background-color: #0a242f;
+  color: white;
+}
+#card-3 h1 {
   color: white;
 }
 
 #card-4 {
-  background-image: url("../assets/5618-coffee-cup.png");
-  background-color: #0a242f;
-  background-size: 20rem 20rem;
+  background-color: #A52A2A	;
+  background-image: url("../assets/index/coffee-crossaint.png");
+  /* background-size: 15rem 20rem; */
   background-position: 50% 10%;
   background-repeat: no-repeat;
   color: white;
@@ -507,12 +509,7 @@ only two cards are in each row */
   outline: 0;
 }
 
-/* #two {
-  letter-spacing: 0.02em;
-} */
-/* 
-  Content of the cards
-*/
+
 .face {
   position: absolute;
   bottom: 0;
@@ -561,7 +558,7 @@ only two cards are in each row */
 }
 
 /* 
-  Design for the Company Section
+  Design for the Footer Section
 */
 .company {
   display: flex;
@@ -691,6 +688,7 @@ only two cards are in each row */
   width: 400px;
   font-size: .9em;
   font-weight: 400;
+  color: white;
 }
 
 /* Design for the company social icons */
@@ -743,12 +741,18 @@ only two cards are in each row */
 
 #facebook-h4:hover {
   cursor: pointer;
-  color: blue;
   transform: translateY(5px);
+  color: aqua;
 }
 
 #facebook {
-  color: blue;
+  color: aqua;
+}
+#whatsapp {
+  color: green;
+}
+#telegram {
+  color: white;
 }
 
 #linkedin {

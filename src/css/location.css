@@ -1,5 +1,5 @@
 
-
+/* main section of the locations page */
 .locations-main {
     display: flex;
     /* display: inline-block; */
@@ -7,7 +7,7 @@
     min-height: 720px;
     position: relative;
 }
-
+/* design for content of the locations */
 .location-description {
     padding: 8% 6%;
     display: inline-block;
@@ -26,15 +26,12 @@ p {
     font-weight: 600;
 }
 
-.places {
-    padding: 2% 10%;
-}
 .location-list {
     background-color: transparent;
     height: 150rem;
 }
 
-/* length of each card  */
+/* extension and change of original info-cards design   */
 .place {
     height: 35rem;
     background-color: transparent;
@@ -59,7 +56,7 @@ p {
     height: 350px;
     margin: 2rem;
 }
-
+/* extension of individual cards */
 .column .location-col {
     background: transparent;
 }
@@ -72,5 +69,13 @@ p {
 
 .place-description {
     display: inline-block;
-    /* width: 100px; */
+}
+/* adding responsiveness to the main section of locations website */
+@media screen and (max-width: 800px) {
+    .location-description {
+        padding: 15% 5%;
+    }
+    .location-list {
+        height: 290rem;
+    }
 }

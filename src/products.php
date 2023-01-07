@@ -26,7 +26,7 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </p>
     </div>
     <video autoplay muted loop id="company-video">
-        <source src="../assets/Coffee-Products.mp4" type="video/mp4">
+        <source src="./assets/products/Coffee-Products.mp4" type="video/mp4">
     </video>
 </div>
 <div class="products" id="products">
@@ -38,7 +38,7 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div id="Recent" class="tabcontent" data-aos="fade-right" data-aos-duration="800">
             <div class="tab-wrapper">
-                <h2>Want something new? Look at our latest lists of products!</h2>
+                <h2>Want something new?</h2>
             </div>
             <div class="info-cards products-cards">
                 <div class="row">
@@ -72,7 +72,7 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div id="Relax" class="tabcontent" data-aos="fade-right" data-aos-duration="800">
             <div class="tab-wrapper">
-                <h2>Feeling chilly? How about something to keep you warm and relaxed?</h2>
+                <h2>Something to keep you warm and relaxed.</h2>
             </div>
             <div class="info-cards products-cards">
                 <div class="row">
@@ -107,7 +107,7 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div id="Energize" class="tabcontent" data-aos="fade-right" data-aos-duration="800">
             <div class="tab-wrapper">
-                <h2>Beverages to energize your soul</h2>
+                <h2>Beverages to energize your soul.</h2>
             </div>
             <div class="info-cards products-cards">
                 <div class="row">

@@ -1,0 +1,291 @@
+/*
+  Styling for Explore Page
+*/
+.explore-main {
+  background: rgb(239, 194, 12);
+  overflow: hidden;
+}
+/* styling for main section of explore page */
+.explore-info {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10rem;
+  padding: 10%;
+}
+/* styling for text content in main section  */
+.explore-title {
+  position: relative;
+  
+  width: 400px;
+  transition: 0.3s ease-in;
+}
+
+.explore-title p {
+  font-size: 1.5em;
+  color: black;
+}
+/* styling for image content in main section */
+.coffee-infographics img {
+  height: 450px;
+  position: relative;
+  box-shadow: 0 0 10px 10px rgb(244, 202, 13);
+  transition: 0.3s ease-in-out;
+}
+/* styling for bootstrap carousel */
+.info-carousel {
+
+  display: flexbox;
+  box-shadow: 0 0 10px 10px rgb(244, 202, 13);
+}
+
+/* absolute positioned title so that it does not change 
+  every slide transition */
+.animated-about-title {
+  font-family: Roboto, Arial, sans-serif;
+  display: block;
+  font-size: 3.5em;
+  left: 6.5rem;
+  margin-top: 10vmin;
+  z-index: 9;
+  position: absolute;
+  -webkit-background-clip: text;
+  color: transparent;
+  overflow: hidden;
+}
+
+
+.carousel-item {
+  transition: transform 1.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.item {
+  background: linear-gradient(to right, #eaa10d 0%, #e8a807 100%);
+  display: flex;
+  height: 40rem;
+}
+
+.item-left {
+  padding: 1.5rem;
+  flex: 1;
+  width: 100%;
+  letter-spacing: 0.05em;
+  font-size: 1em;
+  margin-top: 8rem;
+  margin-left: 5rem;
+}
+
+.item-right {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.item-right img {
+  margin-top: 5%;
+  margin-right: 4%;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  transition: opacity 0s 1.3s;
+}
+
+
+.img-thumbnail {
+  transition: 0.5s ease-in-out;
+}
+
+
+.carousel-indicators {
+  position: absolute;
+  top: 0;
+}
+
+/* Design for Bootstrap Carousel Buttons */
+#carousel-button-1 {
+  transition: 1s ease-in;
+  transform: scale(1.0);
+  background: url("../assets/explore/capuccino.png");
+  object-fit: cover;
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 25px;
+  margin-left: 15px;
+}
+
+#carousel-button-1:hover {
+  transform: scale(1.1);
+}
+
+#carousel-button-2 {
+  transition: 1s ease-in;
+  transform: scale(1.0);
+  background: url("../assets/explore/americano.png");
+  object-fit: cover;
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 25px;
+  margin-left: 15px;
+}
+
+#carousel-button-2:hover {
+  transform: scale(1.1);
+}
+
+#carousel-button-3 {
+  transition: 1s ease-in;
+  transform: scale(1.0);
+  background: url("../assets/explore/mocha.png");
+  object-fit: cover;
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 25px;
+  margin-left: 15px;
+}
+
+#carousel-button-4 {
+  transition: 1s ease-in;
+  transform: scale(1.0);
+  background: url("../assets/explore/espresso.png");
+  object-fit: cover;
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 25px;
+  margin-left: 15px;
+}
+
+#carousel-button-5 {
+  transition: 1s ease-in;
+  transform: scale(1.0);
+  background: url("../assets/explore/latte.png");
+  object-fit: cover;
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 3rem;
+  width: 5rem;
+  border-radius: 25px;
+  margin-left: 15px;
+}
+
+#carousel-button-3:hover {
+  transform: scale(1.1);
+}
+
+#carousel-button-3:active {
+  transform: scale(1.2);
+}
+
+/* 
+    Design for responsiveness in
+    Bootstrap Carousel, adjust word and image size
+    by looking at the individual breakpoints
+  */
+@media screen and (max-width: 1100px) {
+  .animated-about-title {
+    transition: .5s;
+
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .animated-about-title {
+    font-size: 1.5em;
+  }
+
+  .item {
+    height: 30rem;
+  }
+
+  .item-right img {
+    transform: scale(0.8);
+
+  }
+
+
+  .item-left {
+    transform: scale(0.8);
+    margin-top: 4rem;
+  }
+
+  .item-left p {
+    font-size: 1em;
+    width: 100%;
+  }
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+  #carousel-button-1 {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  #carousel-button-2 {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  #carousel-button-3 {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  #carousel-button-4 {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  #carousel-button-5 {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .animated-about-title {
+    font-size: 1.5em;
+  }
+
+  .item-left {
+    transform: scale(0.5);
+  }
+}
+
+@media(max-width: 800px) {
+  .explore-title {
+    transform: scale(0.8);
+    width: 400px;
+  }
+  .animated-about-title {
+    display: none;
+  }
+
+  .explore-title p {
+    font-size: 1em;
+  }
+  .coffee-infographics img {
+    transform: scale(0.5);
+    right: 40%;
+  }
+
+}

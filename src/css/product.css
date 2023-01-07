@@ -3,10 +3,16 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
+/* design for main section of product */
+.product {
+    background: #c79243;
+    padding: 8% 0;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+/* flex display of the buttons at the top part of product page */
 .return-button {
-    /* padding: 10% 5%; */
-
     display: flex;
     align-items: center;
     column-gap: 20%;
@@ -16,21 +22,12 @@ input::-webkit-inner-spin-button {
 .return-button h3 {
     color: white;
 }
-
-.product {
-    background: #c79243;
-    padding: 8% 0;
-    display: inline-block;
-    width: 100%;
-    /* width: 100%; */
-    /* text-align: center; */
-}
-
+/* design for form  */
 #product-form {
     display: flex;
     column-gap: 3rem;
 }
-
+/* design for neumorphism button */
 #neu-button {
     outline: none;
     width: 50px;
@@ -54,13 +51,13 @@ input::-webkit-inner-spin-button {
 .coffee#neu-button:hover {
     transform: translateX(-10px);
 }
-
+/* changing color of the love button */
 @keyframes colorchange {
     to {
         filter: hue-rotate(360deg);
     }
 }
-
+/* design for the quantity input */
 #quantity {
     height: 50px;
     width: 50px;
@@ -70,7 +67,7 @@ input::-webkit-inner-spin-button {
     box-shadow: 6px 6px 9px #8b662f,
         -6px -6px 9px #ffbe57;
 }
-
+/* submission add to cart button */
 #submit {
     text-align: center;
     border-radius: 25px;
@@ -79,7 +76,7 @@ input::-webkit-inner-spin-button {
     box-shadow: 6px 6px 9px #8b662f,
         -6px -6px 9px #ffbe57;
 }
-
+/* neumorphic frame for the quantity buttons */
 .frame {
     display: flex;
     flex-direction: row;
@@ -99,12 +96,27 @@ input::-webkit-inner-spin-button {
     transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
     border-radius: 10px;
 }
-
+/* design for the product's description  */
 .product-description {
     position: relative;
     overflow: none;
     padding-left: 25%;
 }
 .description {
-    width: 50%;
+    width: 70%;
 }
+/* adding responsiveness to the product website */
+@media(max-width: 800px) {
+    .product {
+      padding: 15% 0; 
+    }
+    .product-description {
+        padding-left: 15%;
+    }
+    #submit {
+        padding: 4px 8px;
+    }
+    .return-button {
+        width: 80%;
+    }
+  }

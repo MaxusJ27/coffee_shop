@@ -29,11 +29,7 @@
             VALUES (NULL, '$username', '$hashed_password', '$email')";
 
     if (mysqli_query($conn, $sql)) {
-      // echo "New data successfully created </br> <a href='insert_with_interface.html'>Go Back</a>";
-        echo "Data succesfully registered!";
-    //   header("Location: insert_with_interface.html");
-      // header("Location: view_process.php");
-      // echo "Succesfully created";
+      header("Location: register.php");
     } else {
       echo "Error insert data: " . mysqli_error($conn);
     }

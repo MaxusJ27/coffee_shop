@@ -20,6 +20,8 @@ include 'functions.php';
 // You can find it on
 // https://www.yelp.com/developers/v3/manage_app
 
+// creating a Locations model
+// since not all information pulled from API will be used
 class Locations
 {
     public $name;
@@ -143,20 +145,14 @@ function get_business($business_id)
  * @param    $term        The search term to query
  * @param    $location    The location of the business to query
  */
-function query_api($term, $location, $limit)
+// Querying for 8 YELP businesses
+ function query_api($term, $location, $limit)
 {
-    // $response = json_decode(search($term, $location));
-    // $all_response = json_encode($response->businesses, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
     $responses = json_decode(search($term, $location));
     $locations = array();
     $business_id = $responses->businesses[1]->id;
     $response = get_business($business_id);
-    // echo $response;
-    // $locations_data = json_encode(json_decode($response), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-    // echo json_decode($response)->location->address1;
-    // echo $locations_data;
-    // echo $locations_data;
     for ($i = 0; $i < $limit; $i++) {
         $business_id = $responses->businesses[$i]->id;
         $response = get_business($business_id);
@@ -173,9 +169,6 @@ function query_api($term, $location, $limit)
         $locations[$i]->rating = $location_data->rating;
 
     }
-    // foreach ($locations as $place) {
-    //     echo 'Name:' . $place->name . ' Address:' . $place->location . "\n";
-    // }
     return $locations;
 
 }
@@ -199,8 +192,8 @@ $locations = query_api($term, $location, $SEARCH_LIMIT);
 ?>
 
 <?= template_header('Locations') ?>
-
 <div class="location">
+    <!-- main section of the locations page -->
     <div class="locations-main">
         <div class="location-description">
             <h2>Locations.</h2>
@@ -209,16 +202,14 @@ $locations = query_api($term, $location, $SEARCH_LIMIT);
             </p>
         </div>
         <video autoplay muted loop id="company-video">
-            <source src="../assets/locations.mp4" type="video/mp4">
+            <source src="./assets/locations/locations.mp4" type="video/mp4">
         </video>
     </div>
 
-    <!-- </div> -->
 </div>
-<!-- <div class="places">
-    <h1>Places</h1> -->
     <div class="info-cards location-list">
         <div class="row">
+            <!-- location cards -->
             <?php foreach ($locations as $location): ?>
                 <div class="column location-col">
                     <div class="card place" onclick="window.location='<?= $location->url ?>'">
@@ -227,8 +218,6 @@ $locations = query_api($term, $location, $SEARCH_LIMIT);
                                 <img src="<?= $location->imgUrl ?>" width="200" height="200"
                                     alt="<?= $product['name'] ?>">
                             </div>
-                            <!-- <a href="<?= $location->url ?>">
-                                    </a> -->
                             <div class="place-description">
                                 <span class="name">
                                     <?= $location->name ?>
@@ -254,5 +243,4 @@ $locations = query_api($term, $location, $SEARCH_LIMIT);
                 <?php endforeach; ?>
         </div>
     </div>
-<!-- </div> -->
 <?= template_footer() ?>

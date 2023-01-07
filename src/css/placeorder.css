@@ -1,0 +1,15 @@
+/* design for main section of the placeorder page */
+.placeorder {
+    padding: 14% 10%;
+    display: flex;
+    overflow: none;
+
+}
+/* design for texts in placeorder page  */
+.placeorder-text {
+    width: 100%;
+}
+/* design for robot */
+.placeorder-image img {
+    width: 600px;
+}

@@ -1,5 +1,8 @@
 <?php
 session_start();
+// connect to mysql database through PDO
+// allows individual pages to get data from same database shopping_cart
+// to reduce redundancy 
 function pdo_connect_mysql()
 {
     $servername = "localhost";
@@ -17,7 +20,7 @@ function pdo_connect_mysql()
     }
 
 }
-// Template header, feel free to customize this
+// template header, used in all pages to reduce redundancies
 function template_header($title)
 {
     $num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
@@ -35,7 +38,8 @@ function template_header($title)
         <title>Coffee Shop</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script type="module" src="index.js"></script>
+        <script type="module" src="js/index.js"></script>
+        <link rel="icon" type="image/x-icon" href="./assets/logo/covfee-favicon.ico">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Purple+Purse&display=swap" rel="stylesheet">
@@ -43,12 +47,13 @@ function template_header($title)
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
         <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="products.css">
-        <link rel="stylesheet" href="product.css">
-        <link rel="stylesheet" href="location.css">
-        <link rel="stylesheet" href="cart.css">
-        <link rel="stylesheet" href="explore.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/products.css">
+        <link rel="stylesheet" href="css/product.css">
+        <link rel="stylesheet" href="css/location.css">
+        <link rel="stylesheet" href="css/cart.css">
+        <link rel="stylesheet" href="css/explore.css">
+        <link rel="stylesheet" href="css/placeorder.css">
         
     </head>
     
@@ -57,8 +62,8 @@ function template_header($title)
     
     
     <header id="navbar">
-    <a href="#" class="logo">
-    <img src="../assets/logo-circle-2.png" alt="logo">
+    <a href="index.php" class="logo">
+    <img src="./assets/logo/logo-circle.png" alt="logo">
 </a>
         <ul class="navlist">
         <li><a href="register.php"><i class="fas fa-sign-out-alt fa-rotate-180"></i></a></li>
@@ -75,17 +80,16 @@ function template_header($title)
     <main>
 EOT;
 }
-// Template footer
+// template footer, used in all pages to reduce redundancies
 function template_footer()
 {
-    $year = date('Y');
     echo <<<EOT
         </main>
         <footer>
         <div class="company" id="company">
                 <div class="company-info">
                     <div class="company-logo">
-                        <img src="../assets/logo-circle-2.png" alt="logo-name">
+                        <img src="./assets/logo/logo-circle.png" alt="logo-name">
                         <div class="company-title">
                             <h2>Company Information</h2>
                         </div>
@@ -98,8 +102,8 @@ function template_footer()
                             </h2>
                             <h2>
                                 +6012345678
-                                <a href="#"><i class="bx bxl-whatsapp"></i></a>
-                                <a href="#"><i class="bx bxl-telegram"></i></a>
+                                <a href="#"><i id="whatsapp" class="bx bxl-whatsapp"></i></a>
+                                <a href="#"><i id="telegram" class="bx bxl-telegram"></i></a>
                             </h2>
                             <h3>
                                 CST2004268@xmu.edu.my
@@ -125,19 +129,18 @@ function template_footer()
                     </div>
                 </div>
                 <video autoplay muted loop id="company-video">
-                    <source src="../assets/Coffee-Backgroun.mp4" type="video/mp4">
+                    <source src="./assets/footer/Coffee-Background.mp4" type="video/mp4">
                 </video>
             </div>
         </footer>
         <!-- connecting to Bootstrap cdn -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
-    <script src="tab.js"></script>
-    <script src="product.js"></script>
-    <script src="cart.js"></script>
-    <script src="header.js"></script>
-    
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/cart.js"></script>
     </body>
 </html>
 EOT;

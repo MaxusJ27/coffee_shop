@@ -1,11 +1,16 @@
-<?php 
+<?php
 include "functions.php"
-?>
-<?=template_header('Place Order')?>
+    ?>
+<?= template_header('Place Order') ?>
 
-<div class="placeorder content-wrapper">
-    <h1>Your Order Has Been Placed</h1>
-    <p>Thank you for ordering with us, we'll contact you by email with your order details.</p>
+<div class="placeorder">
+    <div class="placeorder-text">
+        <h1>Your Order is Successful!</h1>
+        <p>Thank you for placing trusting Covfee, we won't let you down!</p>
+    </div>
+    <div class="placeorder-image">
+        <img src="./assets/placeorder/placeorder-robot.gif" alt="dancing robot">
+    </div>
 </div>
 
-<?=template_footer()?>
+<?= template_footer() ?>
